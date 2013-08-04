@@ -29,3 +29,18 @@ COLLATE = utf8_general_ci;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- -----------------------------------------------------
+-- Table `EasyTicketWeb`.`cursos`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `EasyTicketWeb`.`cursos` ;
+
+CREATE TABLE IF NOT EXISTS `cursos` (
+  `id_curso` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(40) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id_curso`),
+  KEY `id_curso` (`id_curso`))
+ENGINE=InnoDB 
+DEFAULT CHARSET=utf8 
+AUTO_INCREMENT=1 ;
