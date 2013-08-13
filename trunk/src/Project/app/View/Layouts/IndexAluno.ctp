@@ -5,12 +5,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<?php echo $this->Html->css('style'); ?>
-        <title>Pessoas</title>
+        <title>Alunos</title>
     </head>
 
     <body>
         
-        <h1>Pessoas</h1>
+        <h1>Alunos</h1>
 
 
 		<?php echo $this->fetch('content'); ?>

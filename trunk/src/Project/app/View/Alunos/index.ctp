@@ -1,5 +1,5 @@
 
-<div id="pessoaindex">
+<div id="alunoindex">
 
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
@@ -10,7 +10,7 @@
 		<?php
 			
 			$i = 0;
-			foreach ($pessoas as $objPessoa) 
+			foreach ($alunos as $objAluno) 
 			{
 				$class = null;
 				
@@ -23,8 +23,8 @@
 		?>
 
 		<tr <?php echo $class; ?>>
-			<td class="nome"><?php echo $objPessoa['Pessoa']['nome']; ?></td>
-			<td class="cpf"><?php echo $objPessoa['Pessoa']['cpf']; ?></td>
+			<td class="nome"><?php echo $objAluno['Aluno']['nome']; ?></td>
+			<td class="cpf"><?php echo $objAluno['Aluno']['cpf']; ?></td>
 		</tr>
 		<?php } ?>
 	</table>
