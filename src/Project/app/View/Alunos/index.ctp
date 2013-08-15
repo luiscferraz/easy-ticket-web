@@ -13,6 +13,7 @@
 			<th>Data de nascimento</th>
 			<th>Telefone</th>
 			<th>Email</th>
+			<th>Curso</th>
 			<th>Início do curso</th>
 			<th>Término do curso</th>
 		</tr>
@@ -38,6 +39,7 @@
 			<td class="dataNasc"><?php echo $aluno['Aluno']['dataNascimento']; ?></td>
 			<td class="telefone"><?php echo $aluno['Aluno']['telefone']; ?></td>
 			<td class="email"><?php echo $aluno['Aluno']['email']; ?></td>
+			<td class="curso"><?php echo $aluno['Aluno']['curso']; ?></td>
 			<td class="inicioCurso"><?php echo $aluno['Aluno']['inicioCurso']; ?></td>
 			<td class="terminoCurso"><?php echo $aluno['Aluno']['terminoCurso']; ?></td>
 
