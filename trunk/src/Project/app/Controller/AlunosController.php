@@ -24,6 +24,7 @@
 
 
  	function add() {
+        $this->layout = 'base';
         if (!empty($this->data)) {
             if ($this->Aluno->save($this->data)) {
                 $this->Session->setFlash('O aluno foi cadastrado com sucesso!');
