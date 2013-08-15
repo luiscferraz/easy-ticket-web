@@ -18,6 +18,10 @@
         }
     }
 
+    function search() { 
+        $this->set('results',$this->Aluno->search($this->data['Aluno']['q'])); 
+    } 
+
  	
  }
  	
