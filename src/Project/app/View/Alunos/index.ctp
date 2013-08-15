@@ -1,5 +1,10 @@
 
 <div id="alunoindex">
+	
+<form method="post" action="alunos">
+	<input class="cpf" id="cpf" type="text" name="cpf" maxlength="14" />
+	<input class="botao" id="botao-cpf" type="submit" value="Buscar aluno" />
+</form>
 
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
@@ -15,7 +20,7 @@
 		<?php
 			
 			$i = 0;
-			foreach ($alunos as $objAluno) 
+			foreach ($alunos as $aluno) 
 			{
 				$class = null;
 				
@@ -28,13 +33,13 @@
 		?>
 
 		<tr <?php echo $class; ?>>
-			<td class="nome"><?php echo $objAluno['Aluno']['nome']; ?></td>
-			<td class="cpf"><?php echo $objAluno['Aluno']['cpf']; ?></td>
-			<td class="dataNasc"><?php echo $objAluno['Aluno']['dataNascimento']; ?></td>
-			<td class="telefone"><?php echo $objAluno['Aluno']['telefone']; ?></td>
-			<td class="email"><?php echo $objAluno['Aluno']['email']; ?></td>
-			<td class="inicioCurso"><?php echo $objAluno['Aluno']['inicioCurso']; ?></td>
-			<td class="terminoCurso"><?php echo $objAluno['Aluno']['terminoCurso']; ?></td>
+			<td class="nome"><?php echo $aluno['Aluno']['nome']; ?></td>
+			<td class="cpf"><?php echo $aluno['Aluno']['cpf']; ?></td>
+			<td class="dataNasc"><?php echo $aluno['Aluno']['dataNascimento']; ?></td>
+			<td class="telefone"><?php echo $aluno['Aluno']['telefone']; ?></td>
+			<td class="email"><?php echo $aluno['Aluno']['email']; ?></td>
+			<td class="inicioCurso"><?php echo $aluno['Aluno']['inicioCurso']; ?></td>
+			<td class="terminoCurso"><?php echo $aluno['Aluno']['terminoCurso']; ?></td>
 
 		</tr>
 		<?php } ?>

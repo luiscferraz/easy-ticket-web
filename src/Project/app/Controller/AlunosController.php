@@ -2,12 +2,26 @@
 
  class AlunosController extends AppController {
 
- 	public function index(){
-	    //Pega todos os elementos aluno e retorna na view
-	    $this->set('title_for_layout', 'Aluno');
- 		$this -> layout = 'IndexAluno';
- 		$this -> set ('alunos', $this-> Aluno ->find('all'));
- 	}
+ 	  public function index(){
+        //Pega todos os elementos aluno e retorna na view
+        $this->set('title_for_layout', 'Aluno');
+        $this->layout = 'IndexAluno';
+        // Verifica se a requisição é do tipo post
+        if ($this->request->is('post')) {
+            // Verifica se no array post existe cpf
+            if (array_key_exists('cpf', $_POST)) {
+                // Pega o cpf que foi digitado e coloca na variável $cpf
+                $cpf =  $_POST['cpf'];
+                // Retorna as informações do aluno que possui o cpf informado
+                $alunos = $this->Aluno->find('all', array('conditions'=> array('cpf' => $cpf)));
+                $this -> set('alunos', $alunos);
+            }
+        }else {
+            $alunos = $this->Aluno->find('all');
+            $this -> set ('alunos', $alunos);
+        }
+    }
+
 
  	function add() {
         if (!empty($this->data)) {
@@ -17,11 +31,6 @@
             }
         }
     }
-
-    function search() { 
-        $this->set('results',$this->Aluno->search($this->data['Aluno']['q'])); 
-    } 
-
  	
  }
  	
