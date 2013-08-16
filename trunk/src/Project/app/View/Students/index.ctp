@@ -1,9 +1,9 @@
 
-<h1><img id="miniLogo" src="/img/miniLogo.png" />  Alunos</h1>
+<h1><img id="miniLogo" src="/img/miniLogo.png" /> Alunos</h1>
 
 <div id="alunoindex">
 	
-<form method="post" action="alunos">
+<form method="post" action="students">
 	<input class="cpf" id="cpf" type="text" name="cpf" maxlength="14" />
 	<input class="botao" id="botao-cpf" type="submit" value="Buscar aluno" />
 </form>
