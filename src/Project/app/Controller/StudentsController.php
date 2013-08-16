@@ -1,6 +1,6 @@
 <?php
 
- class AlunosController extends AppController {
+ class StudentsController extends AppController {
 
  	  public function index(){
         //Pega todos os elementos aluno e retorna na view
@@ -13,12 +13,12 @@
                 // Pega o cpf que foi digitado e coloca na variável $cpf
                 $cpf =  $_POST['cpf'];
                 // Retorna as informações do aluno que possui o cpf informado
-                $alunos = $this->Aluno->find('all', array('conditions'=> array('cpf' => $cpf)));
-                $this -> set('alunos', $alunos);
+                $students = $this->Student->find('all', array('conditions'=> array('cpf' => $cpf)));
+                $this -> set('alunos', $students);
             }
         }else {
-            $alunos = $this->Aluno->find('all');
-            $this -> set ('alunos', $alunos);
+            $students = $this->Student->find('all');
+            $this -> set ('students', $students);
         }
     }
 
@@ -26,7 +26,7 @@
  	function add() {
         $this->layout = 'base';
         if (!empty($this->data)) {
-            if ($this->Aluno->save($this->data)) {
+            if ($this->Student->save($this->data)) {
                 $this->Session->setFlash('O aluno foi cadastrado com sucesso!');
                 $this->redirect(array('action' => 'index'));
             }

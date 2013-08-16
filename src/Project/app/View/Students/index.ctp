@@ -21,7 +21,7 @@
 		<?php
 			
 			$i = 0;
-			foreach ($alunos as $aluno) 
+			foreach ($students as $student) 
 			{
 				$class = null;
 				
@@ -34,14 +34,14 @@
 		?>
 
 		<tr <?php echo $class; ?>>
-			<td class="nome"><?php echo $aluno['Aluno']['nome']; ?></td>
-			<td class="cpf"><?php echo $aluno['Aluno']['cpf']; ?></td>
-			<td class="dataNasc"><?php echo $aluno['Aluno']['dataNascimento']; ?></td>
-			<td class="telefone"><?php echo $aluno['Aluno']['telefone']; ?></td>
-			<td class="email"><?php echo $aluno['Aluno']['email']; ?></td>
-			<td class="curso"><?php echo $aluno['Aluno']['curso']; ?></td>
-			<td class="inicioCurso"><?php echo $aluno['Aluno']['inicioCurso']; ?></td>
-			<td class="terminoCurso"><?php echo $aluno['Aluno']['terminoCurso']; ?></td>
+			<td class="nome"><?php echo $student['Student']['name']; ?></td>
+			<td class="cpf"><?php echo $student['Student']['cpf']; ?></td>
+			<td class="dataNasc"><?php echo $student['Student']['birthday']; ?></td>
+			<td class="telefone"><?php echo $student['Student']['phone']; ?></td>
+			<td class="email"><?php echo $student['Student']['email']; ?></td>
+			<td class="curso"><?php echo $student['Student']['course']; ?></td>
+			<td class="inicioCurso"><?php echo $student['Student']['beginningCourse']; ?></td>
+			<td class="terminoCurso"><?php echo $student['Student']['endCourse']; ?></td>
 
 		</tr>
 		<?php } ?>

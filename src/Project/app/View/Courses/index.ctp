@@ -10,7 +10,7 @@
 		<?php
 			
 			$i = 0;
-			foreach ($cursos as $objCurso) 
+			foreach ($courses as $objCourse) 
 			{
 				$class = null;
 				
@@ -23,7 +23,7 @@
 		?>
 
 		<tr <?php echo $class; ?>>
-			<td class="nome"><?php echo $objCurso['Curso']['nome']; ?></td>
+			<td class="nome"><?php echo $objCourse['Course']['name']; ?></td>
 		</tr>
 
 		<?php } ?>
