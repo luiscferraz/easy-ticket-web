@@ -9,9 +9,6 @@
     </head>
 
     <body>
-        
-        <h1>Alunos</h1>
-
 
 		<?php echo $this->fetch('content'); ?>
 

@@ -1,6 +1,6 @@
 
 
-<h1>Cadastrar Aluno</h1>
+<h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Aluno</h1>
 
 <?php 
 		echo $this->Form->create('Student', array('action' => 'add')); ?>
@@ -10,7 +10,8 @@
 
 			var_export($courses);
 
-		    foreach ($courses as $course) {        
+		    foreach ($courses as $course) { 
+
 		        $lista_courses[$courses['Course']['id_course']] = $course['Course']['name'];
 		        };                    
 		    if (!isset($lista_courses)){
@@ -31,8 +32,6 @@
 						<?php echo $this->Form->input('Student.birthday', array('label' => 'Data de nascimento: ','required'=>'required', 'id'=>'birthday'));?> <br>
 						<?php echo $this->Form->input('Student.phone', array('label' => 'Telefone: ','required'=>'required', 'id'=>'phone'));?> <br>
 						<?php echo $this->Form->input('Student.email', array('label' => 'Email: ','required'=>'required', 'id'=>'email'));?> <br> 
-
-						<?php echo $this->Form->end('Cadastrar aluno'); ?>
 				
 			</fieldset>
 
@@ -47,6 +46,10 @@
 						<?php echo $this->Form->input('Student.endCourse', array('label' => 'Término do curso: ','required'=>'required', 'id'=>'endCourse')); ?> <br>
 					
 			</fieldset>
+
+			<div id="botaoCadastrar"> 
+				<?php echo $this->Form->end('Cadastrar aluno', array('id'=>'buttom')); ?> 
+			</div>
 		
 		</div>
 

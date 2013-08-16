@@ -1,4 +1,6 @@
 
+<h1><img id="miniLogo" src="/img/miniLogo.png" />  Alunos</h1>
+
 <div id="alunoindex">
 	
 <form method="post" action="alunos">
