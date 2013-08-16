@@ -1,6 +1,7 @@
 <?php
 
  class StudentsController extends AppController {
+    public $uses = array ('Course','Student');
 
  	  public function index(){
         //Pega todos os elementos aluno e retorna na view
@@ -19,20 +20,66 @@
         }else {
             $students = $this->Student->find('all');
             $this -> set ('students', $students);
+            
         }
+
+       
     }
 
 
- 	function add() {
+ 	public function add() {
         $this->layout = 'base';
+        $this->set('courses',$this->Course->find('all'));
         if (!empty($this->data)) {
-            if ($this->Student->save($this->data)) {
-                $this->Session->setFlash('O aluno foi cadastrado com sucesso!');
-                $this->redirect(array('action' => 'index'));
+            if($this->request->is('post')){
+                if ($this -> verifica($this->request->data)) {
+                    if($this->Student->saveAll($this->request->data)){
+                        $this->Session->setFlash($this->flashSuccess('O estudante foi adicionado com sucesso.'));
+                        $this->redirect(array('action' => 'index'));
+                    }
+                    else{
+                        $this->Session->setFlash($this->flashError('Erro ao cadastrar atividade!'));
+                    }       
+                }       
             }
+            else{
+                $this->Session->setFlash($this->Session->setFlash($this->flashError('A atividade não foi adicionada. Tente novamente!')));          
+            
+            }   
         }
+        
     }
  	
+
+
+ public function verifica($data) {
+    #echo $data['Student']['cpf'];
+    $ctr = 0;
+    $strerro = '';
+
+    //Aluno existente
+    $ext = $this -> Student -> query ( "SELECT * FROM `students` WHERE cpf = '". $data['Student']['cpf']."'" );
+    #var_export($ext);
+    if (!empty($ext)){
+        $ctr ++;
+        $strerro = $strerro . 'Aluno já cadastrado.';
+    }
+
+    if ($ctr > 0) {
+        #procurar para definicao de erro
+        #$this -> Session -> setFlash ($this -> flashError ($strerro));
+        echo 'Aluno já cadastrado';
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+
+
+
+
  }
  	
 ?>
