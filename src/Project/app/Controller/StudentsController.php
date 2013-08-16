@@ -14,7 +14,7 @@
                 $cpf =  $_POST['cpf'];
                 // Retorna as informações do aluno que possui o cpf informado
                 $students = $this->Student->find('all', array('conditions'=> array('cpf' => $cpf)));
-                $this -> set('alunos', $students);
+                $this -> set('students', $students);
             }
         }else {
             $students = $this->Student->find('all');
