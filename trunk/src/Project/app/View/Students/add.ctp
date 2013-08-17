@@ -26,9 +26,9 @@
 
 						<?php echo $this->Form->input('Student.name', array('label' => 'Nome: ','required'=>'required', 'id'=>'name')); ?> <br>
 						<?php echo $this->Form->input('Student.cpf', array('label' => 'CPF: ','required'=>'required', 'id'=>'cpf'));?> <br>
-						<?php echo $this->Form->input('Student.birthday', array('label' => 'Data de nascimento: ','required'=>'required', 'id'=>'birthday'));?> <br>
+						<?php echo $this->Form->input('Student.birthday', array('label' => 'Data de Nascimento: ','required'=>'required', 'id'=>'birthday'));?> <br>
 						<?php echo $this->Form->input('Student.phone', array('label' => 'Telefone: ','required'=>'required', 'id'=>'phone'));?> <br>
-						<?php echo $this->Form->input('Student.email', array('label' => 'Email: ','required'=>'required', 'id'=>'email'));?> <br> 
+						<?php echo $this->Form->input('Student.email', array('label' => 'E-mail: ','required'=>'required', 'id'=>'email'));?> <br> 
 				
 			</fieldset>
 
