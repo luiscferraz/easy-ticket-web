@@ -12,12 +12,12 @@
 		<tr>
 			<th>Nome</th>
 			<th>CPF</th>
-			<th>Data de nascimento</th>
+			<th>Data de Nascimento</th>
 			<th>Telefone</th>
-			<th>Email</th>
+			<th>E-mail</th>
 			<!-- <th>Curso</th> -->
-			<th>Início do curso</th>
-			<th>Término do curso</th>
+			<th>Início do Curso</th>
+			<th>Término do Curso</th>
 		</tr>
 
 		<?php
