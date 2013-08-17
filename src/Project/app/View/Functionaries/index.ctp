@@ -11,6 +11,11 @@
 		<tr>
 			<th>Nome</th>
 			<th>CPF</th>
+			<th>Data de Nascimento</th>
+			<th>Telefone</th>
+			<th>E-mail</th>
+			<th>Cargo</th>
+			<th>Status</th>
 		</tr>
 
 		<?php
@@ -31,6 +36,11 @@
 		<tr <?php echo $class; ?>>
 			<td class="nome"><?php echo $functionary['Functionary']['name']; ?></td>
 			<td class="cpf"><?php echo $functionary['Functionary']['cpf']; ?></td>
+			<td class= "dataNascimento"><?php echo $functionary['Functionary']['birthday'];?> </td>
+			<td class= "telefone"><?php echo $functionary['Functionary']['phone'];?> </td>
+			<td class= "email"><?php echo $functionary['Functionary']['email'];?> </td>
+			<td class= "cargo"><?php echo $functionary['Functionary']['role'];?> </td>
+			<td class= "status"><?php echo $functionary['Functionary']['statusFunctionary'];?> </td>
 			
 		</tr>
 		<?php } ?>
