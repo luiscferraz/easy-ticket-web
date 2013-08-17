@@ -6,7 +6,7 @@
 
 		<div class="left">
 				
-			<fieldset id="dados_funcionario1">
+			<fieldset id="dados_aluno1">
 				<legend class="legenda">Dados do Funcionário</legend>		
 
 						<?php echo $this->Form->input('Functionary.name', array('label' => 'Nome: ','required'=>'required', 'id'=>'name')); ?> <br>
@@ -17,7 +17,7 @@
 				
 			</fieldset>
 
-			<fieldset id="dados_funcionario2">						
+			<fieldset id="dados_aluno2">						
 						
 						<?php echo $this->Form->input('Functionary.login', array('label' => 'Login: ','required'=>'required', 'id'=>'login'));?> <br>
 						<?php echo $this->Form->input('Functionary.password', array('label' => 'Senha: ', 'type'=>'password','required'=>'required', 'id'=>'password'));?> <br>

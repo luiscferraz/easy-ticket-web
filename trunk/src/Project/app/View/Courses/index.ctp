@@ -1,8 +1,10 @@
 
+
 <div id="cursoindex">
 
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
+			<th>Id</th>
 			<th>Nome</th>
 
 		</tr>
@@ -23,6 +25,7 @@
 		?>
 
 		<tr <?php echo $class; ?>>
+			<td class="idCurso"><?php echo $objCourse['Course']['id_course']; ?></td>
 			<td class="nome"><?php echo $objCourse['Course']['name']; ?></td>
 		</tr>
 
