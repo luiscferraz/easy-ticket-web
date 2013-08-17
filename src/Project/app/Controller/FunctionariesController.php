@@ -25,5 +25,55 @@ class FunctionariesController extends AppController{
        
     }
 
+   	public function add() {
+        $this->layout = 'base';
+        
+        if (!empty($this->data)) {
+            if($this->request->is('post')){
+                if ($this -> verifica($this->request->data)) {
+                    if($this->Functionary->saveAll($this->request->data)){
+                        $this->Session->setFlash($this->flashSuccess('O funcionário foi adicionado com sucesso.'));
+                        $this->redirect(array('action' => 'index'));
+                    }
+                    else{
+                        $this->Session->setFlash($this->flashError('Erro ao cadastrar funcionário!'));
+                    }       
+                }       
+            }
+            else{
+                $this->Session->setFlash($this->Session->setFlash($this->flashError('O funcionário não foi adicionada. Tente novamente!')));          
+            
+            }   
+        }
+        
+    }
+ 	
+
+
+	 public function verifica($data) {
+	    #echo $data['Student']['cpf'];
+	    $ctr = 0;
+	    $strerro = '';
+
+	    //Funcionário existente
+	    $ext = $this -> Functionary -> query ( "SELECT * FROM `functionaries` WHERE cpf = '". $data['Functionary']['cpf']."'" );
+	    #var_export($ext);
+	    if (!empty($ext)){
+	        $ctr ++;
+	        $strerro = $strerro . 'Funcionário já cadastrado.';
+	    }
+
+	    if ($ctr > 0) {
+	        #procurar para definicao de erro
+	        #$this -> Session -> setFlash ($this -> flashError ($strerro));
+	        echo 'Funcionário já cadastrado';
+	        return false;
+	    }
+	    else {
+	        return true;
+	    }
+}
+
+
 }
 ?>
