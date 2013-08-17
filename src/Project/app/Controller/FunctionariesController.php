@@ -17,7 +17,7 @@ class FunctionariesController extends AppController{
                 $this -> set('functionaries', $functionaries);
             }
         }else {
-            $students = $this->Functionary->find('all');
+            $functionaries = $this->Functionary->find('all');
             $this -> set ('functionaries', $functionaries);
             
         }
@@ -51,7 +51,7 @@ class FunctionariesController extends AppController{
 
 
 	 public function verifica($data) {
-	    #echo $data['Student']['cpf'];
+	    #echo $data['Functionary']['cpf'];
 	    $ctr = 0;
 	    $strerro = '';
 
