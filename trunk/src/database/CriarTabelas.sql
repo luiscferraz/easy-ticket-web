@@ -88,7 +88,8 @@ CREATE TABLE IF NOT EXISTS `functionaries` (
   `registerDate` date NOT NULL,
   
   `statusFunctionary` enum('ATIVO','INATIVO','','') CHARACTER SET utf8 NOT NULL,
-  
+ 
+  `role` varchar(45) CHARACTER SET utf8 NOT NULL, 
   PRIMARY KEY (`idFunctionary`),
   
   UNIQUE KEY `cpf` (`cpf`),
