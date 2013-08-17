@@ -58,3 +58,49 @@ CREATE TABLE IF NOT EXISTS `students` (
   ENGINE=InnoDB  
   DEFAULT CHARSET=utf8  
   AUTO_INCREMENT=1 ;
+
+-- -----------------------------------------------------
+-- Table `EasyTicketWeb`.`functionaries`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `EasyTicketWeb`.`functionaries` ;
+
+
+
+
+CREATE TABLE IF NOT EXISTS `functionaries` (
+  
+  `idFunctionary` int(11) NOT NULL AUTO_INCREMENT,
+  
+  `cpf` varchar(14) CHARACTER SET utf8 NOT NULL,
+  
+  `name` varchar(55) CHARACTER SET utf8 NOT NULL,
+  
+  `email` varchar(45) CHARACTER SET utf8 NOT NULL,
+  
+  `phone` varchar(13) CHARACTER SET utf8 NOT NULL,
+  
+  `birthday` date NOT NULL,
+  
+  `login` varchar(45) CHARACTER SET utf8 NOT NULL,
+  
+  `password` varchar(8) CHARACTER SET utf8 NOT NULL,
+  
+  `registerDate` date NOT NULL,
+  
+  `statusFunctionary` enum('ATIVO','INATIVO','','') CHARACTER SET utf8 NOT NULL,
+  
+  PRIMARY KEY (`idFunctionary`),
+  
+  UNIQUE KEY `cpf` (`cpf`),
+  
+  UNIQUE KEY `idFunctionary` (`idFunctionary`),
+  
+  UNIQUE KEY `email` (`email`),
+  
+  UNIQUE KEY `login` (`login`)
+) 
+  ENGINE=InnoDB 
+  DEFAULT CHARSET=utf8 
+  AUTO_INCREMENT=1 ;
+
+
