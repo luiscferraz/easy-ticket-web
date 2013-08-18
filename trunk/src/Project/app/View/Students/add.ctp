@@ -1,11 +1,11 @@
-h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Aluno</h1>
+<h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Aluno</h1>
 
 <?php 
 		echo $this->Form->create('Student', array('action' => 'add')); ?>
 
 
 		<?php 
-			$lista = '';
+			
 		    foreach ($courses as $course) { 
 		    	$course['Course']['id_course'] = $course['Course']['name'];
 		    	
