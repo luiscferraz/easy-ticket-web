@@ -59,6 +59,8 @@ CREATE TABLE IF NOT EXISTS `students` (
   DEFAULT CHARSET=utf8  
   AUTO_INCREMENT=1 ;
 
+
+
 -- -----------------------------------------------------
 -- Table `EasyTicketWeb`.`functionaries`
 -- -----------------------------------------------------
@@ -87,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `functionaries` (
   
   `registerDate` date NOT NULL,
   
-  `statusFunctionary` enum('ATIVO','INATIVO','','') CHARACTER SET utf8 NOT NULL,
+  `statusFunctionary` enum('ATIVO','INATIVO') CHARACTER SET utf8 NOT NULL,
  
   `role` varchar(45) CHARACTER SET utf8 NOT NULL, 
   PRIMARY KEY (`idFunctionary`),
