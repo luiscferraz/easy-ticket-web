@@ -34,7 +34,7 @@
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
                     if($this->Student->saveAll($this->request->data)){
-                        #$this->Session->setFlash($this->flashSuccess('O aluno foi adicionado com sucesso.'));
+                        $this->Session->setFlash('O aluno foi adicionado com sucesso.');
                         $this->redirect(array('action' => 'index'));
                     }
                     else{
@@ -94,20 +94,20 @@
             $this->Student->id = $id;
             if ($this->Student->saveAll($this->request->data)) {
                 
-                #$this->Session->setFlash($this->flashSuccess('Os dados do aluno foram editados!'));
+                $this->Session->setFlash('Os dados do aluno foram editados!');
                 $this->redirect(array('action' => 'index'));
             }
         }
    }
 
-    public function delete($id = NULL)
-   {
-        $this->Student->id = $id;
-        if($this->Student->saveField("removed", "true")){
-            $this->Session->setFlash($this->flashSuccess('O aluno foi deletado!'));
-            $this->redirect(array('action' => 'index'));
-        }
-   }
+
+    public function delete($id) {
+        $this->Student->delete($id);
+        $this->Session->setFlash('O aluno foi deletado!');
+        $this->redirect(array('action'=>'index'));
+    }
+
+
 
 
 
