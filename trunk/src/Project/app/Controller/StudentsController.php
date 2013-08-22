@@ -34,7 +34,7 @@
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
                     if($this->Student->saveAll($this->request->data)){
-                        $this->Session->setFlash($this->flashSuccess('O aluno foi adicionado com sucesso.'));
+                        #$this->Session->setFlash($this->flashSuccess('O aluno foi adicionado com sucesso.'));
                         $this->redirect(array('action' => 'index'));
                     }
                     else{
@@ -51,30 +51,63 @@
     }
  	
 
+    public function verifica($data) {
+        #echo $data['Student']['cpf'];
+        $ctr = 0;
+        $strerro = '';
 
- public function verifica($data) {
-    #echo $data['Student']['cpf'];
-    $ctr = 0;
-    $strerro = '';
+        //Aluno existente
+        $ext = $this -> Student -> query ( "SELECT * FROM `students` WHERE cpf = '". $data['Student']['cpf']."'" );
+        #var_export($ext);
+        if (!empty($ext)){
+            $ctr ++;
+            $strerro = $strerro . 'Aluno já cadastrado.';
+        }
 
-    //Aluno existente
-    $ext = $this -> Student -> query ( "SELECT * FROM `students` WHERE cpf = '". $data['Student']['cpf']."'" );
-    #var_export($ext);
-    if (!empty($ext)){
-        $ctr ++;
-        $strerro = $strerro . 'Aluno já cadastrado.';
+        if ($ctr > 0) {
+            #procurar para definicao de erro
+            #$this -> Session -> setFlash ($this -> flashError ($strerro));
+            echo 'Aluno já cadastrado';
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
-    if ($ctr > 0) {
-        #procurar para definicao de erro
-        #$this -> Session -> setFlash ($this -> flashError ($strerro));
-        echo 'Aluno já cadastrado';
-        return false;
-    }
-    else {
-        return true;
-    }
-}
+    public function edit($id = NULL){
+        $this->layout = 'base';
+        $this->set('courses',$this->Course->find('all'));
+        $this->Student->id = $id;
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+    
+        $student = $this->Student->findById($id);
+        if (!$student) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        if ($this->request->is('get')) {
+            $this->request->data = $this->Student->read();
+        } 
+        else {
+            $this->Student->id = $id;
+            if ($this->Student->saveAll($this->request->data)) {
+                
+                #$this->Session->setFlash($this->flashSuccess('Os dados do aluno foram editados!'));
+                $this->redirect(array('action' => 'index'));
+            }
+        }
+   }
+
+    public function delete($id = NULL)
+   {
+        $this->Student->id = $id;
+        if($this->Student->saveField("removed", "true")){
+            $this->Session->setFlash($this->flashSuccess('O aluno foi deletado!'));
+            $this->redirect(array('action' => 'index'));
+        }
+   }
 
 
 
