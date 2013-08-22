@@ -3,10 +3,13 @@
  class StudentsController extends AppController {
     public $uses = array ('Course','Student');
 
+
  	  public function index(){
         //Pega todos os elementos aluno e retorna na view
         $this->set('title_for_layout', 'Aluno');
         $this->layout = 'IndexAluno';
+
+        $this->set('courses',$this->Course->find('all'));
         // Verifica se a requisição é do tipo post
         if ($this->request->is('post')) {
             // Verifica se no array post existe cpf
