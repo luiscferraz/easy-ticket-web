@@ -10,6 +10,7 @@
  	}
 
  	function add() {
+ 		$this -> layout = 'base';
         if (!empty($this->data)) {
             if ($this->Course->save($this->data)) {
                 $this->Session->setFlash('O curso foi cadastrado com sucesso!');

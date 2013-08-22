@@ -90,7 +90,7 @@ legend{
 }
 
 
-#botaoCadastrar, #botaoEditar {
+#botaoCadastrar, #botaoEditar, #botaoCadastrarCurso {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #ffffff;
@@ -102,4 +102,13 @@ legend{
 
 #button{
 	width: 80%;
+}
+
+#botaoCadastrarCurso{
+	margin-top: -40px !important;
+	margin-right: 600px !important;
+}
+
+#botao-cadastrar-aluno{
+	
 }
