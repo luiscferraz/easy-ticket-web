@@ -47,6 +47,14 @@
 			<td class="terminoCurso"><?php echo $student['Student']['endCourse']; ?></td>
 			<td class="actions">
 
+					
+					<?php
+					echo $this->Html->link($this->Html->image("delete.png",array('alt' => 'Remover')),
+					array('action' => 'delete', $student['Student']['id']),
+					array('escape'=>false, 'class'=>'link'),
+					"Confirmar exclusão do aluno ". $student['Student']['name'] . "?"); 
+					?>
+
 					<?php 
 					echo $this->Html->link($this->Html->image("edit.png",array('alt' => 'Editar')),
 					array('action' => 'edit', $student['Student']['id']),
@@ -54,12 +62,6 @@
 					}
 					?>
 
-					<?php
-					echo $this->Html->link($this->Html->image("delete.png",array('alt' => 'Remover')),
-					array('action' => 'delete', $student['Student']['id']),
-					array('escape'=>false, 'class'=>'link'),
-					"Confirmar exclusão do aluno ". $student['Student']['name'] . "?"); 
-					?>
 			</td>
 	</div>
 
