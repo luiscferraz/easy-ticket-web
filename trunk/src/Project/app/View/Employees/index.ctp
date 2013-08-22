@@ -2,7 +2,7 @@
 
 <div id="funcionarioindex">
 	
-<form method="post" action="functionaries">
+<form method="post" action="employees">
 	<input class="cpf" id="cpf" type="text" name="cpf" maxlength="14" />
 	<input class="botao" id="botao-cpf" type="submit" value="Buscar funcionário por CPF" />
 </form>
@@ -21,7 +21,7 @@
 		<?php
 			
 			$i = 0;
-			foreach ($functionaries as $functionary) 
+			foreach ($employees as $employee) 
 			{
 				$class = null;
 				
@@ -34,13 +34,13 @@
 		?>
 
 		<tr <?php echo $class; ?>>
-			<td class="nome"><?php echo $functionary['Functionary']['name']; ?></td>
-			<td class="cpf"><?php echo $functionary['Functionary']['cpf']; ?></td>
-			<td class= "dataNascimento"><?php echo $functionary['Functionary']['birthday'];?> </td>
-			<td class= "telefone"><?php echo $functionary['Functionary']['phone'];?> </td>
-			<td class= "email"><?php echo $functionary['Functionary']['email'];?> </td>
-			<td class= "cargo"><?php echo $functionary['Functionary']['role'];?> </td>
-			<td class= "status"><?php echo $functionary['Functionary']['statusFunctionary'];?> </td>
+			<td class="nome"><?php echo $employee['Employee']['name']; ?></td>
+			<td class="cpf"><?php echo $employee['Employee']['cpf']; ?></td>
+			<td class= "dataNascimento"><?php echo $employee['Employee']['birthday'];?> </td>
+			<td class= "telefone"><?php echo $employee['Employee']['phone'];?> </td>
+			<td class= "email"><?php echo $employee['Employee']['email'];?> </td>
+			<td class= "cargo"><?php echo $employee['Employee']['role'];?> </td>
+			<td class= "status"><?php echo $employee['Employee']['statusEmployee'];?> </td>
 			
 		</tr>
 		<?php } ?>

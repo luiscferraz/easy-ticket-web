@@ -1,6 +1,6 @@
 <?php
-class FunctionariesController extends AppController{
-	public $uses = array ('Functionary');
+class EmployeesController extends AppController{
+	public $uses = array ('Employee');
 
  	  public function index(){
         //Pega todos os elementos funcionários e retorna na view
@@ -13,12 +13,12 @@ class FunctionariesController extends AppController{
                 // Pega o cpf que foi digitado e coloca na variável $cpf
                 $cpf =  $_POST['cpf'];
                 // Retorna as informações do aluno que possui o cpf informado
-                $functionaries = $this->Functionary->find('all', array('conditions'=> array('cpf' => $cpf)));
-                $this -> set('functionaries', $functionaries);
+                $Employees = $this->Employee->find('all', array('conditions'=> array('cpf' => $cpf)));
+                $this -> set('Employees', $Employees);
             }
         }else {
-            $functionaries = $this->Functionary->find('all');
-            $this -> set ('functionaries', $functionaries);
+            $Employees = $this->Employee->find('all');
+            $this -> set ('Employees', $Employees);
             
         }
 
@@ -31,7 +31,7 @@ class FunctionariesController extends AppController{
         if (!empty($this->data)) {
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
-                    if($this->Functionary->saveAll($this->request->data)){
+                    if($this->Employee->saveAll($this->request->data)){
                         $this->Session->setFlash($this->flashSuccess('O funcionário foi adicionado com sucesso.'));
                         $this->redirect(array('action' => 'index'));
                     }
@@ -51,12 +51,12 @@ class FunctionariesController extends AppController{
 
 
 	 public function verifica($data) {
-	    #echo $data['Functionary']['cpf'];
+	    #echo $data['Employee']['cpf'];
 	    $ctr = 0;
 	    $strerro = '';
 
 	    //Funcionário existente
-	    $ext = $this -> Functionary -> query ( "SELECT * FROM `functionaries` WHERE cpf = '". $data['Functionary']['cpf']."'" );
+	    $ext = $this -> Employee -> query ( "SELECT * FROM `Employees` WHERE cpf = '". $data['Employee']['cpf']."'" );
 	    #var_export($ext);
 	    if (!empty($ext)){
 	        $ctr ++;
