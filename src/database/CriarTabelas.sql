@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `EasyTicketWeb`.`students` ;
 
 CREATE TABLE IF NOT EXISTS `students` (
   
-  `idStudent` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   
   `cpf` varchar(14) CHARACTER SET utf8 NOT NULL,
   
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `students` (
   `statusStudent` varchar(10) CHARACTER SET utf8 NOT NULL,
   `beginningCourse` date NOT NULL,
   `endCourse` date NOT NULL,  
-  PRIMARY KEY (`idStudent`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`),
   
   UNIQUE KEY `email` (`email`),
