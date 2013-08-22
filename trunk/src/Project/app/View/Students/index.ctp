@@ -8,6 +8,11 @@
 	<input class="botao" id="botao-cpf" type="submit" value="Buscar aluno por CPF" />
 </form>
 
+	<?php
+		echo $this->Html->link("Cadastrar novo aluno", array('action' => '../students/add/'), array('class'=>'botao', 'id'=>'botao-cadastrar-aluno'));
+
+	?>
+
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
 			<th>Nome</th>

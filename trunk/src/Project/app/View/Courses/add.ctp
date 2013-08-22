@@ -16,7 +16,7 @@
 				
 			</fieldset>
 
-			<div id="botaoCadastrar"> 
+			<div id="botaoCadastrarCurso"> 
 				<?php echo $this->Form->end('Cadastrar Curso', array('id'=>'button')); ?> 
 			</div>
 		
