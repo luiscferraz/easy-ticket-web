@@ -1,6 +1,6 @@
 <title>Cadastro Funcionário</title>
 
-<h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Funcionário</h1>
+<h1>Cadastrar Funcionário <img id="miniLogo" src="/img/miniLogo.png" /> </h1>
 
 <?php 
 		echo $this->Form->create('Functionary', array('action' => 'add')); ?>

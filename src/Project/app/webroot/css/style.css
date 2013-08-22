@@ -22,7 +22,6 @@ h1 {
 	font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
 	font-weight: bolder;
 	font-size: 50px;
-	margin-left: 180px !important;
 }
 
 h2{
@@ -65,7 +64,6 @@ legend{
 
 #miniLogo {
 	margin-bottom: -40px;
-	margin-left: -170px !important;
 }
 
 .tabela-vazia{
