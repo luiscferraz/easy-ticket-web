@@ -29,10 +29,9 @@ AUTO_INCREMENT=1 ;
 DROP TABLE IF EXISTS `EasyTicketWeb`.`students` ;
 
 
-
 CREATE TABLE IF NOT EXISTS `students` (
   
-  `idPerson` int(11) NOT NULL AUTO_INCREMENT,
+  `idStudent` int(11) NOT NULL AUTO_INCREMENT,
   
   `cpf` varchar(14) CHARACTER SET utf8 NOT NULL,
   
@@ -53,8 +52,13 @@ CREATE TABLE IF NOT EXISTS `students` (
   `statusStudent` varchar(10) CHARACTER SET utf8 NOT NULL,
   `beginningCourse` date NOT NULL,
   `endCourse` date NOT NULL,  
-  PRIMARY KEY (`idPerson`)
-) 
+  PRIMARY KEY (`idStudent`),
+  UNIQUE KEY `cpf` (`cpf`),
+  
+  UNIQUE KEY `email` (`email`),
+  
+  UNIQUE KEY `login` (`login`))
+ 
   ENGINE=InnoDB  
   DEFAULT CHARSET=utf8  
   AUTO_INCREMENT=1 ;
@@ -106,4 +110,31 @@ CREATE TABLE IF NOT EXISTS `functionaries` (
   DEFAULT CHARSET=utf8 
   AUTO_INCREMENT=1 ;
 
+
+
+
+
+-- -----------------------------------------------------
+-- Table `EasyTicketWeb`.`meals`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `EasyTicketWeb`.`meals` ;
+
+
+
+
+CREATE TABLE IF NOT EXISTS `meals` (
+  
+  `idMeal` int(11) NOT NULL AUTO_INCREMENT,
+  
+  `type` varchar(14) CHARACTER SET utf8 NOT NULL,
+  
+  `price` DECIMAL(16,2) NOT NULL,
+  PRIMARY KEY (`idMeal`),
+  
+  UNIQUE KEY `idMeal` (`idMeal`),
+  
+  UNIQUE KEY `type` (`type`))
+  ENGINE=InnoDB 
+  DEFAULT CHARSET=utf8 
+  AUTO_INCREMENT=1 ;
 

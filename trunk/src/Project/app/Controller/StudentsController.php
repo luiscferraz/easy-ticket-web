@@ -34,16 +34,16 @@
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
                     if($this->Student->saveAll($this->request->data)){
-                        $this->Session->setFlash($this->flashSuccess('O estudante foi adicionado com sucesso.'));
+                        $this->Session->setFlash($this->flashSuccess('O aluno foi adicionado com sucesso.'));
                         $this->redirect(array('action' => 'index'));
                     }
                     else{
-                        $this->Session->setFlash($this->flashError('Erro ao cadastrar atividade!'));
+                        $this->Session->setFlash($this->flashError('Erro ao cadastrar aluno!'));
                     }       
                 }       
             }
             else{
-                $this->Session->setFlash($this->Session->setFlash($this->flashError('A atividade não foi adicionada. Tente novamente!')));          
+                $this->Session->setFlash($this->Session->setFlash($this->flashError('O aluno não foi adicionado. Tente novamente!')));          
             
             }   
         }
