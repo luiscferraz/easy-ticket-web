@@ -1,3 +1,5 @@
+<title>Cadastro Funcionário</title>
+
 <h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Funcionário</h1>
 
 <?php 

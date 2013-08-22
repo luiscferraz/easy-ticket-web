@@ -1,3 +1,5 @@
+<title>Cadastrar Aluno</title>
+
 <h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Aluno</h1>
 
 <?php 

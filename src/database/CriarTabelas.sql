@@ -66,16 +66,16 @@ CREATE TABLE IF NOT EXISTS `students` (
 
 
 -- -----------------------------------------------------
--- Table `EasyTicketWeb`.`functionaries`
+-- Table `EasyTicketWeb`.`Employees`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `EasyTicketWeb`.`functionaries` ;
+DROP TABLE IF EXISTS `EasyTicketWeb`.`Employees` ;
 
 
 
 
-CREATE TABLE IF NOT EXISTS `functionaries` (
+CREATE TABLE IF NOT EXISTS `Employees` (
   
-  `idFunctionary` int(11) NOT NULL AUTO_INCREMENT,
+  `idEmployee` int(11) NOT NULL AUTO_INCREMENT,
   
   `cpf` varchar(14) CHARACTER SET utf8 NOT NULL,
   
@@ -93,14 +93,14 @@ CREATE TABLE IF NOT EXISTS `functionaries` (
   
   `registerDate` date NOT NULL,
   
-  `statusFunctionary` enum('ATIVO','INATIVO') CHARACTER SET utf8 NOT NULL,
+  `statusEmployee` enum('ATIVO','INATIVO') CHARACTER SET utf8 NOT NULL,
  
   `role` varchar(45) CHARACTER SET utf8 NOT NULL, 
-  PRIMARY KEY (`idFunctionary`),
+  PRIMARY KEY (`idEmployee`),
   
   UNIQUE KEY `cpf` (`cpf`),
   
-  UNIQUE KEY `idFunctionary` (`idFunctionary`),
+  UNIQUE KEY `idEmployee` (`idEmployee`),
   
   UNIQUE KEY `email` (`email`),
   
