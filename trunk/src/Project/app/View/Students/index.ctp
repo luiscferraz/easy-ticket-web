@@ -15,7 +15,7 @@
 			<th>Data de Nascimento</th>
 			<th>Telefone</th>
 			<th>E-mail</th>
-			<!-- <th>Curso</th> -->
+			<th>Curso</th>
 			<th>Início do Curso</th>
 			<th>Término do Curso</th>
 			<th>Ações</th>
@@ -36,13 +36,15 @@
 							
 		?>
 
+
+
 		<tr <?php echo $class; ?>>
 			<td class="nome"><?php echo $student['Student']['name']; ?></td>
 			<td class="cpf"><?php echo $student['Student']['cpf']; ?></td>
 			<td class="dataNasc"><?php echo $student['Student']['birthday']; ?></td>
 			<td class="telefone"><?php echo $student['Student']['phone']; ?></td>
 			<td class="email"><?php echo $student['Student']['email']; ?></td>
-			<!-- <td class="curso"><?php echo $student['Student']['id_course']; ?></td> -->
+			<td class="curso"><?php echo $student['Student']['id_course']; ?></td>
 			<td class="inicioCurso"><?php echo $student['Student']['beginningCourse']; ?></td>
 			<td class="terminoCurso"><?php echo $student['Student']['endCourse']; ?></td>
 			<td class="actions">

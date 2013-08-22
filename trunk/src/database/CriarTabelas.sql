@@ -49,15 +49,23 @@ CREATE TABLE IF NOT EXISTS `students` (
   
   `registerDate` date NOT NULL,
 
-  `statusStudent` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `statusStudent` varchar(45) CHARACTER SET utf8 NOT NULL,
+
+  `id_course` int(150) NOT NULL ,
+
   `beginningCourse` date NOT NULL,
+
   `endCourse` date NOT NULL,  
+
   PRIMARY KEY (`id`),
+
   UNIQUE KEY `cpf` (`cpf`),
   
   UNIQUE KEY `email` (`email`),
   
-  UNIQUE KEY `login` (`login`))
+  UNIQUE KEY `login` (`login`),
+
+  FOREIGN KEY (`id_course`) REFERENCES Courses(`id_course`)) 
  
   ENGINE=InnoDB  
   DEFAULT CHARSET=utf8  
