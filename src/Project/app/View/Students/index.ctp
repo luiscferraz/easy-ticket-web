@@ -41,7 +41,20 @@
 							
 		?>
 
+		
+		<?php 
+			
+		    foreach ($courses as $course) { 
 
+		    	if ($course['Course']['id_course'] == $student['Student']['id_course']){
+		    		$studentCourse = $course['Course']['name'];
+		    	}
+
+		    }
+		                         
+	
+		?> 
+		
 
 		<tr <?php echo $class; ?>>
 			<td class="nome"><?php echo $student['Student']['name']; ?></td>
@@ -49,7 +62,7 @@
 			<td class="dataNasc"><?php echo $student['Student']['birthday']; ?></td>
 			<td class="telefone"><?php echo $student['Student']['phone']; ?></td>
 			<td class="email"><?php echo $student['Student']['email']; ?></td>
-			<td class="curso"><?php echo $student['Student']['id_course']; ?></td>
+			<td class="curso"><?php echo $studentCourse; ?></td>
 			<td class="inicioCurso"><?php echo $student['Student']['beginningCourse']; ?></td>
 			<td class="terminoCurso"><?php echo $student['Student']['endCourse']; ?></td>
 			<td class="actions">
