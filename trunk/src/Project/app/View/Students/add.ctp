@@ -9,14 +9,14 @@
 		<?php 
 			
 		    foreach ($courses as $course) { 
-		    	$course['Course']['id_course'] = $course['Course']['name'];
-		    	$list_courses[] = $course['Course']['name'];
-		    	
+		    	$list_courses[$course['Course']['id_course']] = $course['Course']['name'];
+		    	#$list_courses[] = $course['Course']['name'];
+		    	}
 		                         
 		   		if (!isset($list_courses)){
 					$list_courses['none'] = 'Nenhum Curso Cadastrado';
 		    	}
-			}
+		
 
 			
 		?> 
