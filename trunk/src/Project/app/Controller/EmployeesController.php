@@ -1,6 +1,6 @@
 <?php
 class EmployeesController extends AppController{
-	public $uses = array ('Employee');
+	public $uses = 'Employee';
 
  	  public function index(){
         //Pega todos os elementos funcionários e retorna na view
@@ -13,12 +13,12 @@ class EmployeesController extends AppController{
                 // Pega o cpf que foi digitado e coloca na variável $cpf
                 $cpf =  $_POST['cpf'];
                 // Retorna as informações do aluno que possui o cpf informado
-                $Employees = $this->Employee->find('all', array('conditions'=> array('cpf' => $cpf)));
-                $this -> set('Employees', $Employees);
+                $employees = $this->Employee->find('all', array('conditions'=> array('cpf' => $cpf)));
+                $this -> set('employees', $employees);
             }
         }else {
-            $Employees = $this->Employee->find('all');
-            $this -> set ('Employees', $Employees);
+            $employees = $this->Employee->find('all');
+            $this -> set ('employees', $employees);
             
         }
 
@@ -32,16 +32,16 @@ class EmployeesController extends AppController{
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
                     if($this->Employee->saveAll($this->request->data)){
-                        $this->Session->setFlash($this->flashSuccess('O funcionário foi adicionado com sucesso.'));
+                        $this->Session->setFlash('O funcionário foi adicionado com sucesso.');
                         $this->redirect(array('action' => 'index'));
                     }
                     else{
-                        $this->Session->setFlash($this->flashError('Erro ao cadastrar funcionário!'));
+                        $this->Session->setFlash('Erro ao cadastrar funcionário!');
                     }       
                 }       
             }
             else{
-                $this->Session->setFlash($this->Session->setFlash($this->flashError('O funcionário não foi adicionada. Tente novamente!')));          
+                $this->Session->setFlash($this->Session->setFlash('O funcionário não foi adicionada. Tente novamente!'));          
             
             }   
         }
@@ -56,7 +56,7 @@ class EmployeesController extends AppController{
 	    $strerro = '';
 
 	    //Funcionário existente
-	    $ext = $this -> Employee -> query ( "SELECT * FROM `Employees` WHERE cpf = '". $data['Employee']['cpf']."'" );
+        $ext = $this -> Employee -> query ( "SELECT * FROM `employees` WHERE cpf = '". $data['Employee']['cpf']."'" );   
 	    #var_export($ext);
 	    if (!empty($ext)){
 	        $ctr ++;
