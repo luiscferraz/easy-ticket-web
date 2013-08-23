@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `students` (
   
   UNIQUE KEY `login` (`login`),
 
-  FOREIGN KEY (`id_course`) REFERENCES Courses(`id_course`)) 
+  FOREIGN KEY (`id_course`) REFERENCES `easyticketweb`.`courses`(`id_course`)) 
  
   ENGINE=InnoDB  
   DEFAULT CHARSET=utf8  

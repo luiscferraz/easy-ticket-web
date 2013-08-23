@@ -9,6 +9,8 @@
         $this->set('title_for_layout', 'Aluno');
         $this->layout = 'IndexAluno';
 
+        $this -> set('studentsAvaiable', $this->Student->query("SELECT * FROM `students` WHERE statusStudent = '0'" ));
+
         $this->set('courses',$this->Course->find('all'));
         // Verifica se a requisição é do tipo post
         if ($this->request->is('post')) {

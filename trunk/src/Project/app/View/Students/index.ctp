@@ -29,57 +29,51 @@
 		<?php
 			
 			$i = 0;
+
 			foreach ($students as $student) 
 			{
-				$class = null;
-				
-				if($i++ % 2 == 0)
-				{
-					$class = 'class="altrow"';
-				}
+				#buscar apenas alunos com status "ATIVO"
+				if ($student['Student']['statusStudent'] == 0) {
+					$class = null;
 					
-							
-		?>
+					if($i++ % 2 == 0)
+					{
+						$class = 'class="altrow"';
+					}
+					
+				    foreach ($courses as $course) { 
 
-		
-		<?php 
-			
-		    foreach ($courses as $course) { 
+				    	if ($course['Course']['id_course'] == $student['Student']['id_course']){
+				    		$studentCourse = $course['Course']['name'];
+				    	}
 
-		    	if ($course['Course']['id_course'] == $student['Student']['id_course']){
-		    		$studentCourse = $course['Course']['name'];
-		    	}
-
-		    }
-		                         
-	
+				    }              
 		?> 
 		
-
 		<tr <?php echo $class; ?>>
-			<td class="nome"><?php echo $student['Student']['name']; ?></td>
-			<td class="cpf"><?php echo $student['Student']['cpf']; ?></td>
-			<td class="dataNasc"><?php echo $student['Student']['birthday']; ?></td>
-			<td class="telefone"><?php echo $student['Student']['phone']; ?></td>
-			<td class="email"><?php echo $student['Student']['email']; ?></td>
-			<td class="curso"><?php echo $studentCourse; ?></td>
-			<td class="inicioCurso"><?php echo $student['Student']['beginningCourse']; ?></td>
-			<td class="terminoCurso"><?php echo $student['Student']['endCourse']; ?></td>
-			<td class="actions">
-
-					
-					<?php
-					echo $this->Html->link($this->Html->image("delete.png",array('alt' => 'Remover')),
-					array('action' => 'delete', $student['Student']['id']),
-					array('escape'=>false, 'class'=>'link'),
-					"Confirmar exclusão do aluno ". $student['Student']['name'] . "?"); 
-					?>
+					<td class="nome"><?php echo $student['Student']['name']; ?></td>
+					<td class="cpf"><?php echo $student['Student']['cpf']; ?></td>
+					<td class="dataNasc"><?php echo $student['Student']['birthday']; ?></td>
+					<td class="telefone"><?php echo $student['Student']['phone']; ?></td>
+					<td class="email"><?php echo $student['Student']['email']; ?></td>
+					<td class="curso"><?php echo $studentCourse; ?></td>
+					<td class="inicioCurso"><?php echo $student['Student']['beginningCourse']; ?></td>
+					<td class="terminoCurso"><?php echo $student['Student']['endCourse']; ?></td>
+					<td class="actions">
 
 					<?php 
 					echo $this->Html->link($this->Html->image("edit.png",array('alt' => 'Editar')),
 					array('action' => 'edit', $student['Student']['id']),
 					array('escape'=>false, 'class'=>'link'));
-					}
+					?>
+
+					<?php
+					echo $this->Html->link($this->Html->image("delete.png",array('alt' => 'Remover')),
+					array('action' => 'delete', $student['Student']['id']),
+					array('escape'=>false, 'class'=>'link'),
+					"Confirmar exclusão do aluno ". $student['Student']['name'] . "?");
+				}
+			} 
 					?>
 
 			</td>
