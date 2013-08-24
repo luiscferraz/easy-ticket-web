@@ -131,3 +131,46 @@ legend{
 	background: -webkit-linear-gradient(top, #00CD00 60%, #548B54);;
 }
 
+
+
+/* =======================
+==========================
+==== MENU PRINCIPAL ======
+==========================
+==========================*/
+#Menu_Home{
+	z-index:99999;
+    background-color: #30ba0c;
+    width:400px;
+	opacity:0.85;
+	/*alterado*/
+	padding:10px 0px 10px 0px;
+  	position:fixed;
+    height: 70%;
+    border:2px solid #30ba0c;
+	/*end*/
+}
+#Menu_Home ul  {
+	margin-top:10px;
+	margin-left:0px;
+	padding-left:0px;
+}
+#Menu_Home ul li{
+	list-style:none;
+	color:#FFF;
+	opacity:1;
+}
+#Menu_Home ul li a{
+	text-decoration:none;
+	opacity:1 !important;
+	color:#000;
+	display:block;
+	padding:20px 0px 20px 100px;
+	margin-top:10px;
+	font-size:26px;
+	color:#FFF;
+	
+}
+#Menu_Home ul li a:hover {
+	background-color:#008B00;
+}
