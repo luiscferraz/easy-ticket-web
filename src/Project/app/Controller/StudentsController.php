@@ -5,11 +5,8 @@
 
 
  	  public function index(){
-        //Pega todos os elementos aluno e retorna na view
-        $this->set('title_for_layout', 'Aluno');
-        $this->layout = 'IndexAluno';
-
-        $this -> set('studentsAvaiable', $this->Student->query("SELECT * FROM `students` WHERE statusStudent = '0'" ));
+        $this->set('title_for_layout', 'Alunos');
+        $this -> layout = 'index';
 
         $this->set('courses',$this->Course->find('all'));
         // Verifica se a requisição é do tipo post
@@ -33,6 +30,7 @@
 
 
  	public function add() {
+        $this->set('title_for_layout', 'Cadastrar Alunos');
         $this->layout = 'base';
         $this->set('courses',$this->Course->find('all'));
         if (!empty($this->data)) {
@@ -81,6 +79,7 @@
     }
 
     public function edit($id = NULL){
+        $this->set('title_for_layout', 'Editar Aluno');
         $this->layout = 'base';
         $this->set('courses',$this->Course->find('all'));
         $this->Student->id = $id;

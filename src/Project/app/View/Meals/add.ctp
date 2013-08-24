@@ -1,7 +1,3 @@
-<title>Cadastrar Refeição</title>
-
-<h1><img id="miniLogo" src="/img/miniLogo.png" />  Cadastrar Funcionário</h1>
-
 <?php 
 		echo $this->Form->create('Meal', array('action' => 'add')); ?>
 

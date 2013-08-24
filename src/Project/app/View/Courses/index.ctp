@@ -1,4 +1,3 @@
-
 	<?php
 		echo $this->Html->link("Cadastrar novo curso", array('action' => '../courses/add/'), array('class'=>'botao', 'id'=>'botao-cadastrar-curso'));
 	?>

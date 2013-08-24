@@ -4,8 +4,8 @@ class EmployeesController extends AppController{
 
  	  public function index(){
         //Pega todos os elementos funcionários e retorna na view
-        $this->set('title_for_layout', 'Funcionário');
-        $this->layout = 'IndexFuncionario';
+        $this->set('title_for_layout', 'Funcionários');
+        $this->layout = 'base';
         // Verifica se a requisição é do tipo post
         if ($this->request->is('post')) {
             // Verifica se no array post existe cpf
@@ -26,6 +26,7 @@ class EmployeesController extends AppController{
     }
 
    	public function add() {
+        $this->set('title_for_layout', 'Cadastrar Funcionário');
         $this->layout = 'base';
         
         if (!empty($this->data)) {

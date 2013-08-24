@@ -1,7 +1,3 @@
-<title>Cadastro Funcionário</title>
-
-<h1>Cadastrar Funcionário <img id="miniLogo" src="/img/miniLogo.png" /> </h1>
-
 <?php 
 		echo $this->Form->create('Employee', array('action' => 'add')); ?>
 

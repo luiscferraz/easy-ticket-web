@@ -1,7 +1,3 @@
-<title>Cadastrar Curso</title>
-
-<h1><img id="miniLogo" src="/img/miniLogo.png" /> Cadastrar Curso</h1>
-
 <?php 
 		echo $this->Form->create('Course', array('action' => 'add')); ?>
 
