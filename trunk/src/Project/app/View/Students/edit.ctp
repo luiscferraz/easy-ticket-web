@@ -1,7 +1,3 @@
-<title>Editar Aluno</title>
-
-<h1><img id="miniLogo" src="/img/miniLogo.png" />  Editar Aluno</h1>
-
 <?php 
 		echo $this->Form->create('Student', array('action' => 'edit')); ?>
 

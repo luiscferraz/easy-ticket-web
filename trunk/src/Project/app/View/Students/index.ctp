@@ -1,17 +1,9 @@
-
-<h1><img id="miniLogo" src="/img/miniLogo.png" /> Alunos</h1>
-
 <div id="alunoindex">
 	
 <form method="post" action="students">
 	<input class="cpf" id="cpf" type="text" name="cpf" maxlength="14" />
 	<input class="botao" id="botao-cpf" type="submit" value="Buscar aluno por CPF" />
 </form>
-
-	<?php
-		echo $this->Html->link("Cadastrar novo aluno", array('action' => '../students/add/'), array('class'=>'botao', 'id'=>'botao-cadastrar-aluno'));
-
-	?>
 
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>

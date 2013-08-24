@@ -1,4 +1,8 @@
-<h1><img id="miniLogo" src="/img/miniLogo.png" /> Funcionários</h1>
+<title>Funcionários</title>
+
+<img id="miniLogo" src="/img/miniLogo.png" />
+
+<h1>Funcionários</h1>
 
 <div id="funcionarioindex">
 	

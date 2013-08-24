@@ -4,9 +4,8 @@
     public $uses = array ('Meal');
 
       public function index(){
-        //Pega todos os elementos aluno e retorna na view
-        $this->set('title_for_layout', 'Refeição');
-        $this->layout = 'IndexRefeição';
+        $this->set('title_for_layout', 'Refeições');
+        $this->layout = 'index';
         // Verifica se a requisição é do tipo post
         if ($this->request->is('post')) {
             // Verifica se no array post existe cpf
@@ -28,6 +27,7 @@
 
 
     public function add() {
+        $this->set('title_for_layout', 'Cadastrar Refeição');
         $this->layout = 'base';
         if (!empty($this->data)) {
             if($this->request->is('post')){
