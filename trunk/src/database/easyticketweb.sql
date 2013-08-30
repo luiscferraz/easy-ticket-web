@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `easyticketweb`.`students` (
   `password` VARCHAR(8) NOT NULL,
   `registerDate` DATETIME NOT NULL,
   `statusStudent` ENUM('ATIVO','INATIVO') NOT NULL,
-  `beginnngCourse` DATE NOT NULL,
+  `beginningCourse` DATE NOT NULL,
   `endCourse` DATE NOT NULL,
   `idCourse` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
