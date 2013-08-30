@@ -35,7 +35,7 @@
 					
 				    foreach ($courses as $course) { 
 
-				    	if ($course['Course']['id_course'] == $student['Student']['id_course']){
+				    	if ($course['Course']['id'] == $student['Student']['id']){
 				    		$studentCourse = $course['Course']['name'];
 				    	}
 
