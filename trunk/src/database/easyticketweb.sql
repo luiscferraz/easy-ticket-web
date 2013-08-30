@@ -200,17 +200,17 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `easyticketweb`.`meal_has_menu` ;
 
 CREATE TABLE IF NOT EXISTS `easyticketweb`.`meal_has_menu` (
-  `idMeal` INT NOT NULL,
-  `idMenu` INT NOT NULL,
+  `idMealFk` INT NOT NULL,
+  `idMenuFk` INT NOT NULL,
   `menuDate` DATE NOT NULL, 
-  PRIMARY KEY (`idMeal`, `idMenu`),
-  INDEX `idMeal_idx` (`idMeal` ASC),
-  INDEX `idMenu_idx` (`idMenu` ASC),
-  CONSTRAINT `idMeal`
-    FOREIGN KEY (`idMeal`)
+  PRIMARY KEY (`idMealFk`, `idMenuFk`),
+  INDEX `idMealFk_idx` (`idMealFk` ASC),
+  INDEX `idMenuFk_idx` (`idMenuFk` ASC),
+  CONSTRAINT `idMealFk`
+    FOREIGN KEY (`idMealFk`)
     REFERENCES `easyticketweb`.`meals` (`id`),
-  CONSTRAINT `idMenu`
-    FOREIGN KEY (`idMenu`)
+  CONSTRAINT `idMenuFk`
+    FOREIGN KEY (`idMenuFk`)
     REFERENCES `easyticketweb`.`menus` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
