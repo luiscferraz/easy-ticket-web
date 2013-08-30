@@ -25,7 +25,7 @@
 			foreach ($students as $student) 
 			{
 				#buscar apenas alunos com status "ATIVO"
-				if ($student['Student']['statusStudent'] == 0) {
+				if ($student['Student']['statusStudent'] == "ATIVO") {
 					$class = null;
 					
 					if($i++ % 2 == 0)
@@ -34,11 +34,9 @@
 					}
 					
 				    foreach ($courses as $course) { 
-
-				    	if ($course['Course']['id'] == $student['Student']['id']){
+				    	if ($course['Course']['id'] == $student['Student']['idCourse']){
 				    		$studentCourse = $course['Course']['name'];
 				    	}
-
 				    }              
 		?> 
 		
