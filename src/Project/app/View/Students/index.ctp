@@ -7,7 +7,7 @@
 
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
-			<th>Nome</th>
+			<th id='thNome'>Nome</th>
 			<th>CPF</th>
 			<th>Data de Nascimento</th>
 			<th>Telefone</th>

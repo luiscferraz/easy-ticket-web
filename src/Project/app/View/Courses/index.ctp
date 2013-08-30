@@ -27,7 +27,7 @@
 		?>
 
 		<tr <?php echo $class; ?>>
-			<td class="idCurso"><?php echo $objCourse['Course']['id_course']; ?></td>
+			<td class="idCurso"><?php echo $objCourse['Course']['id']; ?></td>
 			<td class="nome"><?php echo $objCourse['Course']['name']; ?></td>
 		</tr>
 

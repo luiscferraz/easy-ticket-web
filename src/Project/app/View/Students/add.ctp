@@ -3,7 +3,7 @@
 
 		<?php 
 		    foreach ($courses as $course) { 
-		    	$list_courses[$course['Course']['id_course']] = $course['Course']['name'];
+		    	$list_courses[$course['Course']['id']] = $course['Course']['name'];
 		    	#$list_courses[] = $course['Course']['name'];
 		    	}
 		                         
