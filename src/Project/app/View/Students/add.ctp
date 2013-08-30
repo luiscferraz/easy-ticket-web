@@ -25,7 +25,7 @@
 			<fieldset id="dados_aluno2">
 						<?php echo $this->Form->input('Student.login', array('label' => 'Login: ','required'=>'required', 'id'=>'login'));?> <br>
 						<?php echo $this->Form->input('Student.password', array('label' => 'Senha: ', 'type'=>'password','required'=>'required', 'id'=>'password'));?> <br>
-						<?php echo $this->Form->input('Student.statusStudent', array('options' => array("ATIVO", "INATIVO"), 'empty' => 'Selecione', 'type'=>'select','label' => 'Status: ', 'id'=>'status')); ?> <br>
+						 <?php echo $this->Form->input('Student.statusStudent', array('options' => array("ATIVO" => "ATIVO", "INATIVO" => "INATIVO"), 'type'=>'select', 'empty' => 'Selecione')); ?><br>
 						<?php echo $this->Form->input('Student.idCourse', array('options' => $list_courses,'empty' => 'Selecione', 'type'=>'select','label' => 'Curso: ', 'id'=>'course')); ?> <br>
 						<?php echo $this->Form->input('Student.beginningCourse', array('label' => 'Início do curso: ','required'=>'required', 'id'=>'beginningCourse')); ?>  <br>
 						<?php echo $this->Form->input('Student.endCourse', array('label' => 'Término do curso: ','required'=>'required', 'id'=>'endCourse')); ?> <br>
