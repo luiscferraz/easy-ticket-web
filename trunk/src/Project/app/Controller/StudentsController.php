@@ -3,7 +3,6 @@
  class StudentsController extends AppController {
     public $uses = array ('Course','Student');
 
-
  	  public function index(){
         $this->set('title_for_layout', 'Alunos');
         $this -> layout = 'index';
@@ -24,10 +23,7 @@
             $this -> set ('students', $students);
             
         }
-
-       
     }
-
 
  	public function add() {
         $this->set('title_for_layout', 'Cadastrar Alunos');
@@ -47,13 +43,11 @@
             }
             else{
                 $this->Session->setFlash($this->Session->setFlash($this->flashError('O aluno não foi adicionado. Tente novamente!')));          
-            
             }   
         }
         
     }
  	
-
     public function verifica($data) {
         #echo $data['Student']['cpf'];
         $ctr = 0;
@@ -104,18 +98,11 @@
         }
    }
 
-
     public function delete($id) {
         $this->Student->delete($id);
         $this->Session->setFlash('O aluno foi deletado!');
         $this->redirect(array('action'=>'index'));
     }
-
-
-
-
-
-
 
  }
  	
