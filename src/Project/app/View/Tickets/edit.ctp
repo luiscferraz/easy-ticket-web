@@ -13,7 +13,7 @@
 		?> 
 
 		<div class="left">
-			<fieldset id="dados_aluno1">
+			<fieldset id="dados1">
 				<legend class="legenda">Dados do cartão</legend>
 					    <?php echo $this->Form->input('Ticket.id', array('type' => 'hidden')); ?>		
 						<?php echo $this->Form->input('Ticket.idStudent', array('options' => $list_students, 'placeholder'=>'', 'empty' => 'Selecione', 'type'=>'select','label' => 'Aluno: ', 'id'=>'aluno')); ?> <br>		

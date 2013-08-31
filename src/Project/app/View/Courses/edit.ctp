@@ -4,7 +4,7 @@
 
 		<div class="left">
 				
-			<fieldset id="dados_aluno1">
+			<fieldset id="dados2">
 				<legend class="legenda">Curso</legend>		
 
 						<?php echo $this->Form->input('Course.name', array('label' => 'Nome: ','required'=>'required', 'id'=>'nome'));

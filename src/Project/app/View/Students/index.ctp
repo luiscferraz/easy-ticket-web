@@ -62,15 +62,13 @@
 					array('action' => 'delete', $student['Student']['id']),
 					array('escape'=>false, 'class'=>'link'),
 					"Confirmar exclusão do aluno ". $student['Student']['name'] . "?");
-				}
-			} 
-					?>
-
+				} 
+			?>
 			</td>
 	</div>
 
 		</tr>
-		
+		<?php } ?>
 	</table>
 	
 </div>
