@@ -103,7 +103,7 @@ DROP TABLE IF EXISTS `easyticketweb`.`tickets` ;
 CREATE TABLE IF NOT EXISTS `easyticketweb`.`tickets` (
   `numTicket` INT(11) NOT NULL AUTO_INCREMENT,
   `statusTicket` ENUM('ATIVO', 'INATIVO', 'BLOQUEADO') NOT NULL,
-  `saldo` FLOAT NOT NULL DEFAULT 0,
+  `balance` FLOAT NOT NULL DEFAULT 0,
   `registerDate` DATETIME NOT NULL,
   
   `idStudent` INT NOT NULL,
