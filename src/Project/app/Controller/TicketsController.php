@@ -16,8 +16,8 @@
                 // Pega o cpf que foi digitado e coloca na variável $cpf
                 $numTicket =  $_POST['numTicket'];
                 // Retorna as informações do aluno que possui o cpf informado
-                $student = $this->Student->find('all', array('conditions'=> array('numTicket' => $numTicket)));
-                $this -> set('students', $students);
+                $ticket = $this->Ticket->find('all', array('conditions'=> array('numTicket' => $numTicket)));
+                $this -> set('tickets', $tickets);
             }
 
         }else {
@@ -31,30 +31,33 @@
 
 
     public function add() {
+        $tickets = $this->Ticket->find('all');
+        $this -> set ('tickets', $tickets); 
         $this->set('title_for_layout', 'Cadastrar Cartão');
         $this->layout = 'base';
         $this->set('students',$this->Student->find('all'));
         if (!empty($this->data)) {
             if($this->request->is('post')){
-                if ($this -> verifica($this->request->data)) {
-                    if($this->Ticket->saveAll($this->request->data)){
+                if ($this -> verificaAluno($this->request->data)) {
+                     if ($this -> verificaNumero($this->request->data)){
+                        if($this->Ticket->saveAll($this->request->data)){
                         $this->Session->setFlash('O cartão foi cadastrado com sucesso!');
                         $this->redirect(array('action' => 'index'));
                     }
                     else{
-                        $this->Session->setFlash($this->flashError('Erro ao cadastrar cartão!'));
+                        $this->Session->setFlash('Erro ao cadastrar cartão!');
                     }       
                 }       
             }
             else{
-                $this->Session->setFlash($this->Session->setFlash($this->flashError('O cartão não foi cadastrado. Tente novamente.')));          
+                $this->Session->setFlash($this->Session->setFlash('O cartão não foi cadastrado. Tente novamente.'));          
             }   
         }
-        
+      }  
     }
 
 
-    public function verifica($data) {
+    public function verificaAluno($data) {
         $this->set('tickets',$this->Ticket->find('all'));
         #echo $data['Student']['name'];
         $ctr = 0;
@@ -78,6 +81,32 @@
             return true;
         }
     }  
+
+
+    public function verificaNumero($data) {
+        $this->set('tickets',$this->Ticket->find('all'));
+        #echo $data['Student']['name'];
+        $ctr = 0;
+        $strerro = '';
+
+        //Aluno selecionado já possui cartão
+        $ext = $this -> Ticket -> query ( "SELECT * FROM `tickets` WHERE numTicket = '". $data['Ticket']['numTicket']."'" );
+        #var_export($ext);
+        if (!empty($ext)){
+            $ctr ++;
+            $strerro = $strerro . 'Já existe um cartão cadastrado com o número informado.';
+        }
+
+        if ($ctr > 0) {
+            #procurar para definicao de erro
+            #$this -> Session -> setFlash ($this -> flashError ($strerro));
+            echo 'Cartão já cadastrado';
+            return false;
+        }
+        else {
+            return true;
+        }
+    } 
 
 
     public function edit($id = NULL){
@@ -108,7 +137,7 @@
 
 
 
-      public function delete($id) {
+    public function delete($id) {
         $this->Ticket->delete($id);
         $this->Session->setFlash('O cartão foi deletado!');
         $this->redirect(array('action'=>'index'));
