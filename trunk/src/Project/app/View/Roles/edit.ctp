@@ -4,7 +4,7 @@
 
 		<div class="left">
 				
-			<fieldset id="dados_aluno1">
+			<fieldset id="dados2">
 				<legend class="legenda">Dados do Cargo</legend>		
 
 						<?php echo $this->Form->input('Role.name', array('label' => 'Nome: ','required'=>'required', 'id'=>'name')); ?> <br>
@@ -12,8 +12,8 @@
 			</fieldset>
 
 
-			<div id="botaoCadastrar"> 
-				<?php echo $this->Form->end('Cadastrar cargo', array('id'=>'button')); ?> 
+			<div id="botaoEditar"> 
+				<?php echo $this->Form->end('Salvar dados');?> 
 			</div>
 		
 		</div>

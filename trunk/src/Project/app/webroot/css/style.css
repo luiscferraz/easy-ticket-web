@@ -75,7 +75,7 @@ legend{
 	margin-top: 30px;
 }
 
-#dados_aluno1, #dados_aluno2{
+#dados1, #dados2{
 	font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
 	padding-left: 20px;
 	border-width: 30px;
@@ -85,7 +85,7 @@ legend{
 	background-color: #98d284;
 }
 
-#dados_aluno2{
+#dados2{
 	margin-top: 12px;
 	margin-bottom: 50px;
 	padding-bottom: 10px !important;
@@ -105,7 +105,8 @@ legend{
 	 border-top-color:#ececec;
   	 border-bottom-color:#9AFF9A;
   	 color:#333;
-  	 background: -webkit-linear-gradient(top, #9AFF9A 60%, #e7e7e7);
+  	 font:normal 21px/1.1em "Trebuchet MS", Verdana !important;
+  	 background: -webkit-linear-gradient(top, #98d284 60%, #e7e7e7);
   	 background: -moz-linear-gradient(top, #fff 60%, #e7e7e7);
   	 -moz-border-radius: 10px;
   	 -webkit-border-radius: 10px;
@@ -121,18 +122,18 @@ legend{
 }
 
 .submit input {
+	width: 45%;
  	 padding: 30px 8px;
   	 font:normal 14px/1.1em Verdana;
-  	 float: right !important;
 	 margin-top: -40%;
 	 margin-right: 38%;
+	 margin-left: 1.7%;
+	 margin-bottom: 20px;
 }
 
 
-
-
 .botao:hover, .submit input:hover {
-	background: -webkit-linear-gradient(top, #00CD00 60%, #548B54);;
+	background: -webkit-linear-gradient(top, #52963b 60%, #548B54);;
 }
 
 

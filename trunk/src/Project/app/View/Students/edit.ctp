@@ -19,7 +19,7 @@
 
 		<div class="left">
 				
-			<fieldset id="dados_aluno1">
+			<fieldset id="dados1">
 				<legend class="legenda">Dados do aluno</legend>		
 						<?php echo $this->Form->input('Student.id', array('type' => 'hidden')); ?>
 						<?php echo $this->Form->input('Student.name', array('label' => 'Nome: ','placeholder'=>'', 'id'=>'name')); ?> <br>
@@ -30,7 +30,7 @@
 				
 			</fieldset>
 
-			<fieldset id="dados_aluno2">
+			<fieldset id="dados2">
 						
 						
 						<?php echo $this->Form->input('Student.login', array('label' => 'Login: ','required'=>'required', 'id'=>'login'));?> <br>

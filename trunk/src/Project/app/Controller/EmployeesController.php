@@ -1,11 +1,12 @@
 <?php
 class EmployeesController extends AppController{
-	public $uses = 'Employee';
+	public $uses = array ('Employee', 'Role');
 
  	  public function index(){
         //Pega todos os elementos funcionários e retorna na view
         $this->set('title_for_layout', 'Funcionários');
         $this -> layout = 'index';
+        $this->set('roles',$this->Role->find('all'));
         // Verifica se a requisição é do tipo post
         if ($this->request->is('post')) {
             // Verifica se no array post existe cpf
@@ -28,7 +29,7 @@ class EmployeesController extends AppController{
    	public function add() {
         $this->set('title_for_layout', 'Cadastrar Funcionário');
         $this->layout = 'base';
-        
+        $this->set('roles',$this->Role->find('all'));
         if (!empty($this->data)) {
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
@@ -74,6 +75,38 @@ class EmployeesController extends AppController{
 	        return true;
 	    }
 }
+
+    public function edit($id = NULL){
+        $this->set('title_for_layout', 'Editar Funcionário');
+        $this->layout = 'base';
+        $this->set('roles',$this->Role->find('all'));
+        $this->Employee->id = $id;
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+    
+        $employee = $this->Employee->findById($id);
+        if (!$employee) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        if ($this->request->is('get')) {
+            $this->request->data = $this->Employee->read();
+        } 
+        else {
+            $this->Employee->id = $id;
+            if ($this->Employee->save($this->request->data)) {
+                
+                $this->Session->setFlash('Os dados do funcionário foram editados!');
+                $this->redirect(array('action' => 'index'));
+            }
+        }
+   }
+
+    public function delete($id) {
+        $this->Employee->delete($id);
+        $this->Session->setFlash('O funcionário foi deletado!');
+        $this->redirect(array('action'=>'index'));
+    }
 
 
 }

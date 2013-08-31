@@ -74,7 +74,7 @@
         } 
         else {
             $this->Role->id = $id;
-            if ($this->Role->saveAll($this->request->data)) {
+            if ($this->Role->save($this->request->data)) {
                 
                 $this->Session->setFlash('Os dados do cargo foram editados!');
                 $this->redirect(array('action' => 'index'));
