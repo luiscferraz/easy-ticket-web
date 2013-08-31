@@ -33,7 +33,7 @@
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
                     if($this->Meal->saveAll($this->request->data)){
-                        $this->Session->setFlash($this->flashSuccess('A refeição foi adicionada com sucesso.'));
+                        $this->Session->setFlash('A refeição foi adicionada com sucesso.');
                         $this->redirect(array('action' => 'index'));
                     }
                     else{
@@ -76,7 +76,36 @@
 }
 
 
+    public function edit($id = NULL){
+        $this->set('title_for_layout', 'Editar Item');
+        $this->layout = 'base';
+        $this->Meal->id = $id;
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+    
+        $meal = $this->Meal->findById($id);
+        if (!$meal) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        if ($this->request->is('get')) {
+            $this->request->data = $this->Meal->read();
+        } 
+        else {
+            $this->Meal->id = $id;
+            if ($this->Meal->save($this->request->data)) {
+                
+                $this->Session->setFlash('Os dados da Refeição foram editados!');
+                $this->redirect(array('action' => 'index'));
+            }
+        }
+   }
 
+    public function delete($id) {
+        $this->Meal->delete($id);
+        $this->Session->setFlash('A Refeição foi deletada!');
+        $this->redirect(array('action'=>'index'));
+    }
 
 
  }
