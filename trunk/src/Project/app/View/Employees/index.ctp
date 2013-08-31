@@ -1,9 +1,5 @@
 <title>Funcionários</title>
 
-<img id="miniLogo" src="/img/miniLogo.png" />
-
-<h1>Funcionários</h1>
-
 <div id="funcionarioindex">
 	
 <form method="post" action="employees">
@@ -11,10 +7,7 @@
 	<input class="botao" id="botao-cpf" type="submit" value="Buscar funcionário por CPF" />
 </form>
 
-<?php
-		echo $this->Html->link("Cadastrar novo funcionário", array('action' => '../employees/add/'), array('class'=>'botao', 'id'=>'botao-cadastrar-func'));
 
-	?>
 
 <table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
