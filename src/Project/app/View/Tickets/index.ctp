@@ -47,13 +47,13 @@
 
 					<?php 
 					echo $this->Html->link($this->Html->image("edit.png",array('alt' => 'Editar')),
-					array('action' => 'edit', $ticket['Ticket']['numTicket']),
+					array('action' => 'edit', $ticket['Ticket']['id']),
 					array('escape'=>false, 'class'=>'link'));
 					?>
 
 					<?php
 					echo $this->Html->link($this->Html->image("delete.png",array('alt' => 'Remover')),
-					array('action' => 'delete', $ticket['Ticket']['numTicket']),
+					array('action' => 'delete', $ticket['Ticket']['id']),
 					array('escape'=>false, 'class'=>'link'),
 					"Confirmar exclusão do cartão pertencente ao aluno ". $ticketStudent . "?");
 				}
