@@ -96,6 +96,10 @@ legend{
 	width: 80%;
 }
 
+#buttonAddTicket{
+	margin-top: 250px;
+}
+
 .botao, .submit input{ 
 	display: inline-block;
 	 border-top-color:#ececec;
