@@ -101,13 +101,13 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `easyticketweb`.`tickets` ;
 
 CREATE TABLE IF NOT EXISTS `easyticketweb`.`tickets` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `numTicket` INT(11) NOT NULL AUTO_INCREMENT,
   `statusTicket` ENUM('ATIVO', 'INATIVO', 'BLOQUEADO') NOT NULL,
   `balance` FLOAT NOT NULL DEFAULT 0,
   `registerDate` DATETIME NOT NULL,
-  
   `idStudent` INT NOT NULL,
-  PRIMARY KEY (`numTicket`),
+  PRIMARY KEY (`id`),
   INDEX `idStudent_idx` (`idStudent` ASC),
   CONSTRAINT `idStudent`
     FOREIGN KEY (`idStudent`)
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `easyticketweb`.`recharges` (
   INDEX `numTicket_idx` (`numTicket` ASC),
   CONSTRAINT `numTicket`
     FOREIGN KEY (`numTicket`)
-    REFERENCES `easyticketweb`.`tickets` (`numTicket`))
+    REFERENCES `easyticketweb`.`tickets` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `easyticketweb`.`payments` (
   INDEX `paymentTicket_idx` (`paymentTicket` ASC),
   CONSTRAINT `paymentTicket`
     FOREIGN KEY (`paymentTicket`)
-    REFERENCES `easyticketweb`.`tickets` (`numTicket`))
+    REFERENCES `easyticketweb`.`tickets` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
