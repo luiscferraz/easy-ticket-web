@@ -12,11 +12,11 @@
         // Verifica se a requisição é do tipo post
         if ($this->request->is('post')) {
             // Verifica se no array post existe cpf
-            if (array_key_exists('', $_POST)) {
+            if (array_key_exists('numTicket', $_POST)) {
                 // Pega o cpf que foi digitado e coloca na variável $cpf
                 $numTicket =  $_POST['numTicket'];
                 // Retorna as informações do aluno que possui o cpf informado
-                $ticket = $this->Ticket->find('all', array('conditions'=> array('numTicket' => $numTicket)));
+                $tickets = $this->Ticket->find('all', array('conditions'=> array('numTicket' => $numTicket)));
                 $this -> set('tickets', $tickets);
             }
 
