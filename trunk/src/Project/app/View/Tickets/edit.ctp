@@ -13,16 +13,13 @@
 		?> 
 
 		<div class="left">
-			<fieldset id="dados1">
+			<fieldset id="dados2">
 				<legend class="legenda">Dados do cartão</legend>
 					    <?php echo $this->Form->input('Ticket.id', array('type' => 'hidden')); ?>		
 						<?php echo $this->Form->input('Ticket.idStudent', array('options' => $list_students, 'placeholder'=>'', 'empty' => 'Selecione', 'type'=>'select','label' => 'Aluno: ', 'id'=>'aluno')); ?> <br>		
 						<?php echo $this->Form->input('Ticket.numTicket', array('label' => 'Número: ','placeholder'=>'', 'id'=>'name')); ?> <br>
-						<?php echo $this->Form->input('Ticket.statusTicket', array('options' => array("ATIVO" => "ATIVO", "INATIVO" => "INATIVO", "BLOQUEADO" => "BLOQUEADO" ), 'placeholder'=>'', 'type'=>'select', 'empty' => 'Selecione', 'label' => 'Status: ')); ?><br>
-
-
-		 		<?php echo $this->Form->end('Salvar dados'); ?> 	
-			
+						<?php echo $this->Form->input('Ticket.statusTicket', array('options' => array("ATIVO" => "ATIVO", "INATIVO" => "INATIVO", "BLOQUEADO" => "BLOQUEADO" ), 'placeholder'=>'', 'type'=>'select', 'empty' => 'Selecione', 'label' => 'Status: ')); ?><br>	
 			</fieldset>
-
 		</div>
+
+		<?php echo $this->Form->end('Salvar dados'); ?> 

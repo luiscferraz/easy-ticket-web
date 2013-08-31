@@ -1,11 +1,11 @@
 <?php 
-		echo $this->Form->create('Meal', array('action' => 'add')); ?>
+		echo $this->Form->create('Meal', array('action' => 'edit')); ?>
 
 
 		<div class="left">
 				
 			<fieldset id="dados2">
-				<legend class="legenda">Dados da Refeição</legend>		
+				<legend class="legenda">Dados Refeição</legend>		
 
 						<?php echo $this->Form->input('Meal.type', array('label' => 'Tipo: ','required'=>'required', 'id'=>'tipo'));
 							?> <br>
@@ -14,8 +14,8 @@
 				
 			</fieldset>
 
-			<div id="botaoCadastrar"> 
-				<?php echo $this->Form->end('Cadastrar Refeição', array('id'=>'button')); ?> 
+			<div id="botaoCadastrarRefeicao"> 
+				<?php echo $this->Form->end('Salvar Refeição', array('id'=>'button')); ?> 
 			</div>
 		
 		</div>

@@ -31,16 +31,13 @@
 
 
 		<div class="left">
-			<fieldset id="dados1">
+			<fieldset id="dados2">
 				<legend class="legenda">Dados do cartão</legend>		
 						<?php echo $this->Form->input('Ticket.idStudent', array('options' => $list_students,'empty' => 'Selecione', 'type'=>'select','label' => 'Aluno: ', 'id'=>'aluno')); ?> <br>
 						<!--<label>Número:</label><?php echo $number; ?> <br><br> -->
 						<?php echo $this->Form->input('Ticket.numTicket', array('label' => 'Número: ','value' => $number, 'required'=>'required', 'id'=>'number')); ?> <br>
-						<?php echo $this->Form->input('Ticket.statusTicket', array('options' => array("ATIVO" => "ATIVO", "INATIVO" => "INATIVO", "BLOQUEADO" => "BLOQUEADO" ), 'type'=>'select', 'empty' => 'Selecione', 'label' => 'Status: ')); ?><br>
-
-
-		 		<?php echo $this->Form->end('Cadastrar cartão', array('id'=>'buttonAddTicket')); ?> 	
-			
+						<?php echo $this->Form->input('Ticket.statusTicket', array('options' => array("ATIVO" => "ATIVO", "INATIVO" => "INATIVO", "BLOQUEADO" => "BLOQUEADO" ), 'type'=>'select', 'empty' => 'Selecione', 'label' => 'Status: ')); ?><br> 	
 			</fieldset>
-
 		</div>
+
+		<?php echo $this->Form->end('Cadastrar cartão', array('id'=>'buttonAddTicket')); ?>
