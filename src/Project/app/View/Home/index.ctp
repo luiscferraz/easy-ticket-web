@@ -8,7 +8,7 @@
 			<li><?php echo $this->Html->link('Cargos', array('action' =>'../roles'));?></li>
 			<li><?php echo $this->Html->link('Cartões', array('action' =>'../tickets'));?></li>
 			<li><?php echo $this->Html->link('Refeições', array('action' =>'../meals'));?></li>
-			<li><?php echo $this->Html->link('Itens', array('action' =>'../itens'));?></li>
+			<li><?php echo $this->Html->link('Itens', array('action' =>'../items'));?></li>
 
 		</ul>
 </div>

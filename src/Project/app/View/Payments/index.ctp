@@ -27,7 +27,7 @@
 			<td class="nome"><?php echo $payment['payments']['id']; ?></td>
 			<td class="cartao"><?php echo $payment['students']['name']; ?></td>
 			<td class="cartao"><?php echo $payment['tickets']['numTicket']; ?></td>
-			<td class= "refeicao"><?php echo $payment['payments']['value'];?> </td>
+			<td class= "refeicao"><?php echo $payment['meals']['type'];?> </td>
 			<td class= "data"><?php echo $payment['payments']['date'];?> </td>
 		</tr>
 
