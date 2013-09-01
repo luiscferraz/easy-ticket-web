@@ -7,9 +7,9 @@ class PaymentsController extends AppController{
         $this->set('title_for_layout', 'Registro de Pagamentos');
         $this -> layout = 'index';
         $this->set('payments',
-            $this-> Ticket -> query ( "SELECT payments.id, payments.date, tickets.numTicket, students.name, payments.value   FROM 
-                (payments INNER JOIN tickets ON payments.idTicket = tickets.id) INNER JOIN students 
-                ON tickets.idStudent = students.id" ));
+            $this-> Ticket -> query ( "SELECT payments.id, payments.date, tickets.numTicket, students.name, meals.type   FROM 
+                ((payments INNER JOIN tickets ON payments.idTicket = tickets.id) INNER JOIN students 
+                ON tickets.idStudent = students.id) INNER JOIN meals ON payments.idMeal = meals.id" ));
     }
 
    	public function add($meal = NULL) {

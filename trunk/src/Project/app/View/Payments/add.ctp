@@ -3,7 +3,7 @@
 
 		<?php 
 		    foreach ($meals as $meal) { 
-		    	$list_meals[$meal['Meal']['price']] = $meal['Meal']['type'];
+		    	$list_meals[$meal['Meal']['id']] = $meal['Meal']['type'];
 		    	$empty = 'Selecione a refeição';
 		    	#$list_meals[] = $meal['Meal']['name'];
 		    	}
@@ -29,7 +29,7 @@
 				
 			<fieldset id="dados1">
 				<legend class="legenda">Seleção de Refeição</legend>	
-						<?php echo $this->Form->input('Payment.value', array('options' => $list_meals,'empty' => $empty,'type'=>'select','label' => 'Selecione a refeição pertencente aos novos pagamentos: ', 'class'=>'mealList'));  ?> <br>
+						<?php echo $this->Form->input('Payment.idMeal', array('options' => $list_meals,'empty' => $empty,'type'=>'select','label' => 'Selecione a refeição pertencente aos novos pagamentos: ', 'class'=>'mealList'));  ?> <br>
 			</fieldset>
 
 			<fieldset id="dados2">						
