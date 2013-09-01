@@ -32,7 +32,7 @@
 						<?php echo $this->Form->input('Employee.login', array('label' => 'Login: ','required'=>'required', 'id'=>'login'));?> <br>
 						<?php echo $this->Form->input('Employee.password', array('label' => 'Senha: ', 'type'=>'password','required'=>'required', 'id'=>'password'));?> <br>
 						<?php echo $this->Form->input('Employee.status', array('options' => array("ATIVO", "INATIVO"), 'empty' => 'Selecione', 'type'=>'select','label' => 'Status: ', 'id'=>'status')); ?> <br>
-						<?php echo $this->Form->input('Student.idRole', array('options' => $list_roles,'empty' => 'Selecione', 'type'=>'select', 'placeholder'=>'', 'label' => 'Curso: ', 'id'=>'role')); ?> <br>
+						<?php echo $this->Form->input('Student.idRole', array('options' => $list_roles,'empty' => 'Selecione', 'type'=>'select', 'placeholder'=>'', 'label' => 'Cargo: ', 'id'=>'role')); ?> <br>
 					
 			</fieldset>
 
