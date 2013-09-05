@@ -1,6 +1,6 @@
 <?php
 
- class mealsController extends AppController {
+ class MealsController extends AppController {
     public $uses = array ('Meal');
 
       public function index(){
