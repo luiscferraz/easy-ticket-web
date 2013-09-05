@@ -77,7 +77,7 @@
 
 
     public function edit($id = NULL){
-        $this->set('title_for_layout', 'Editar Item');
+        $this->set('title_for_layout', 'Editar Refeição');
         $this->layout = 'base';
         $this->Meal->id = $id;
         if (!$id) {
