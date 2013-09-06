@@ -1,5 +1,10 @@
 <div id="recargaindex">
 
+	<form method="post" action="recharges">
+		<input class="cpf" id="cpf" type="text" name="cpf" maxlength="14" />
+		<input class="botao" id="botao-cpf" type="submit" value="Buscar recargas de um Aluno de CPF:" />
+	</form>
+
 	<table class="tabela-vazia" cellpadding="0" cellspacing="0">
 		<tr>
 			<th>ID</th>

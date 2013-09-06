@@ -6,7 +6,26 @@
       public function index(){
         $this->set('title_for_layout', 'Recargas');
         $this->layout = 'index';
-        
+
+        if ($this->request->is('post')) {
+            // Verifica se no array post existe cpf
+            if (array_key_exists('cpf', $_POST)) {
+                // Pega o cpf que foi digitado e coloca na variável $cpf
+
+                $cpf =  $_POST['cpf'];
+                echo $cpf;
+                // Retorna as informações do aluno que possui o cpf informado
+                $this->set('recharges', $this-> Recharge -> query 
+                    ( "SELECT * FROM  (recharges INNER JOIN tickets ON recharges.idTicketRecharge = tickets.id) 
+                        INNER JOIN students ON tickets.idStudent = students.id WHERE students.cpf = '" . $cpf . "'"));
+            }
+        else {
+            $recharges = $this->Recharge->find('all');
+            $this -> set ('recharges', $recharges);
+            
+        }
+        }
+           
         $recharges = $this->Recharge->find('all');
         $this -> set ('recharges', $recharges);
 
