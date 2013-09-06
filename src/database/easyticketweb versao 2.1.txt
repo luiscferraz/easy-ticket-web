@@ -33,40 +33,28 @@ CREATE TABLE IF NOT EXISTS `courses` (
 INSERT INTO `courses` (`id`, `name`) VALUES
 (1, 'Sistema de InformaÃ§Ã£o'),
 (2, 'Medicina VeterinÃ¡ria'),
+(3, 'Jornalismo'),
 (4, 'Engenharia Civil'),
-(5, 'EducaÃ§Ã£o FÃ­sica');
+(5,'Gastronomia '),
+(6, 'EducaÃ§Ã£o FÃ­sica'),
+(7,'Economia Doméstica'),
+(8,'Engenharia Agrícola e Ambiental'),
+(9,'Engenharia de Pesca'),
+(10,'Engenharia Florestal'),
+(11,'Ciências Agrícolas'),
+(12,'Computação'),
+(13,'Educação Física'),
+(14,'Física'),
+(15,'História'),
+(16,'Matemática'),
+(17,'Pedagogia'),
+(18,'Química'),
+(19,'Medicina Veterinária'),
+(20,'Zootecnia');
 
 -- --------------------------------------------------------
 
---
--- Estrutura para tabela `employees`
---
 
-CREATE TABLE IF NOT EXISTS `employees` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(55) NOT NULL,
-  `cpf` varchar(14) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `phone` varchar(13) NOT NULL,
-  `birthday` date NOT NULL,
-  `login` varchar(16) NOT NULL,
-  `password` varchar(8) NOT NULL,
-  `registerDate` datetime NOT NULL,
-  `statusEmployee` enum('ATIVO','INATIVO') NOT NULL,
-  `idRole` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `cpf_UNIQUE` (`cpf`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `login_UNIQUE` (`login`),
-  KEY `idRole_idx` (`idRole`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Fazendo dump de dados para tabela `employees`
---
-
-INSERT INTO `employees` (`id`, `name`, `cpf`, `email`, `phone`, `birthday`, `login`, `password`, `registerDate`, `statusEmployee`, `idRole`) VALUES
-(1, 'Igor Matheus', '392723892', 'igor@gmail.com', '828927289', '1993-07-04', 'igor', 'igor', '0000-00-00 00:00:00', 'ATIVO', 3);
 
 -- --------------------------------------------------------
 
@@ -86,8 +74,26 @@ CREATE TABLE IF NOT EXISTS `items` (
 --
 
 INSERT INTO `items` (`id`, `name`) VALUES
-(2, 'FeijÃ£o preto'),
-(3, 'MacarrÃ£o ao alho e Ã³leo');
+(1,'OVO COM FARINHA'),
+(2,'PÃO COM OVO'),
+(3,'BIFE DO OIÃO'),
+(4,'DISCO VOADOR'),
+(5,'PACUMÊ AO OVO FRITO'),
+(6,'PAVÊ AO OVO PARDO'),
+(7,'OVOS DE GALINHA'),
+(8,'GEMA DE OVO DE GANSO'),
+(9,'CLARA EM NEVES COM ARROZ'),
+(10,'FILÉ DE OVO DEFUMADO'),
+(11,'SUSHI DE OVO COZIDO'),
+(12,'OVO AOS QUATRO QUEIJOS'),
+(13,'PIZZA DE OVO'),
+(14,'OVOS COM CALDA DE GEMA'),
+(15,'SALADA COM OMELETE'),
+(16,'PIRÃO DE OVO '),
+(17,'CODORN EGGS BURGUER'),
+(18,'SANDUICHE DE GEMA COM OVO'),
+(19,'FEIJÃO AO OVO E OLEO'),
+(20,'RISOTO DE OVOS FRITOS GEMADOS');
 
 -- --------------------------------------------------------
 
@@ -219,11 +225,80 @@ CREATE TABLE IF NOT EXISTS `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`) VALUES
-(5, 'FaxineirÃ­ssimo'),
-(4, 'Professora'),
-(3, 'SecretÃ¡rio');
+(1,'Jogador'),
+(2,'Político'),
+(3,'Manobrista'),
+(4,'Frentista'),
+(5,'Flanelinha'),
+(6,'Diretor'),
+(7,'Empresário'),
+(8,'Digitador'),
+(9,'DBA'),
+(10,'Cozinheiro'),
+(11,'Faxineiro'),
+(12,'Mecânico'),
+(13,'Professor'),
+(14,'Estagiário'),
+(15,'Economista'),
+(16,'Encanador'),
+(17,'Torneiro'),
+(18,'Zelador'),
+(19,'Médico'),
+(20,'Presidente');
 
 -- --------------------------------------------------------
+
+
+--
+-- Estrutura para tabela `employees`
+--
+
+CREATE TABLE IF NOT EXISTS `employees` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(55) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `phone` varchar(13) NOT NULL,
+  `birthday` date NOT NULL,
+  `login` varchar(16) NOT NULL,
+  `password` varchar(8) NOT NULL,
+  `registerDate` datetime NOT NULL,
+  `statusEmployee` enum('ATIVO','INATIVO') NOT NULL,
+  `idRole` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cpf_UNIQUE` (`cpf`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `login_UNIQUE` (`login`),
+  KEY `idRole_idx` (`idRole`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Fazendo dump de dados para tabela `employees`
+--
+
+INSERT INTO `employees` (`id`, `name`, `cpf`, `email`, `phone`, `birthday`, `login`, `password`, `registerDate`, `statusEmployee`, `idRole`) VALUES
+(1,'ABRILINA DÉCIMA NONA CAÇAPAVANA PIRATININGA','575.691.669-57','abrilia@gmail.com','8162294416','1982-12-30','abrilia','abrilia','0000-00-00 00:00:00','ATIVO',4),
+(2,'ACHEROPITA PAPAZONE','443.966.990-50','acheropita@gmail.com','8135830113','1982-12-31','acheropita','acheropita','0000-00-00 00:00:01','ATIVO',19),
+(3,'JOSÉ CASOU DE CALÇAS CURTAS','601.552.168-64','josecasou@gmail.com','8121169013','1982-12-25','josecasou','josecasou','0000-00-00 00:00:02','ATIVO',20),
+(4,'JOSÉ CATARRINHO','451.138.746-04','jose@gmail.com','8163538995','1954-11-29','jose','jose','0000-00-00 00:00:03','ATIVO',1),
+(5,'JOSÉ MACHUCA','865.263.744-09','josemachuca@gmail.com','8154211051','1982-03-09','josemachuca','josemachuca','0000-00-00 00:00:04','ATIVO',2),
+(6,'JOSÉ MARIA GUARDANAPO','599.186.952-93','zemaria@gmail.com','8133204304','1982-12-30','zemaria','zemaria','0000-00-00 00:00:05','ATIVO',20),
+(7,'JOSÉ PADRE NOSSO','141.245.445-02','padre@gmail.com','8149594961','1982-12-31','padre','padre','0000-00-00 00:00:06','ATIVO',10),
+(8,'JOSÉ TEODORO PINTO TAPADO','354.725.879-05','pinto@gmail.com','8131112685','1982-12-25','pinto','pinto','0000-00-00 00:00:07','ATIVO',3),
+(9,'JOSÉ XIXI','573.427.784-35','xixi@gmail.com','8115564267','1954-11-29','xixi','xixi','0000-00-00 00:00:08','ATIVO',19),
+(10,'JOVELINA Ó ROSA CHEIROSA','513.614.536-64','jovelina@gmail.com','8133432108','1982-03-09','jovelina','jovelina','0000-00-00 00:00:09','ATIVO',20),
+(11,'JOTACÁ DOIS MIL E UM JUANA MULA','336.467.786-79','jotaca@gmail.com','8112180110','1982-12-30','jotaca','jotaca','0000-00-00 00:00:10','INATIVO',6),
+(12,'JÚLIO SANTOS PÉ-CURTO','165.414.164-00','julio@gmail.com','8126878445','1982-12-31','julio','julio','0000-00-00 00:00:11','INATIVO',16),
+(13,'JUSTIÇA MARIA DE JESUS','877.064.195-17','justica@gmail.com','8154320101','1982-12-25','justica','justica','0000-00-00 00:00:12','ATIVO',9),
+(14,'LANÇA PERFUME RODOMETÁLICO DE ANDRADE','210.654.363-86','lancaperfume@gmail.com','8175588948','1954-11-29','lanca','lanca','0000-00-00 00:00:13','INATIVO',5),
+(15,'LEÃO ROLANDO PEDREIRA','975.171.176-29','leao@gmail.com','8120577897','1982-03-09','leao','leao','0000-00-00 00:00:14','INATIVO',18),
+(16,'LEDA PRAZERES AMANTE','784.086.812-65','ledaprazeres@gmail.com','8129273420','1982-12-30','leda','leda','0000-00-00 00:00:15','ATIVO',16),
+(17,'LETSGO DAQUI ','762.261.434-36','letsgo@gmail.com','8142969527','1982-12-31','letsgo','letsgo','0000-00-00 00:00:16','ATIVO',11),
+(18,'LIBERDADE IGUALDADE','821.235.262-58','liberdade@gmail.com','8119881409','1982-12-25','liberdade','liberdade','0000-00-00 00:00:17','ATIVO',15),
+(19,'FRATERNIDADE NOVA YORK ROCHA','914.411.460-59','frat@gmail.com','8154662080','1954-11-29','fraterno','fraterno','0000-00-00 00:00:18','ATIVO',17),
+(20,'LIBERTINO AFRICANO NOBRE','839.787.421-60','libertino@gmail.com','8183552165','1982-03-09','libertino','libertino','0000-00-00 00:00:19','ATIVO',8);
+
+
 
 --
 -- Estrutura para tabela `students`
@@ -255,8 +330,27 @@ CREATE TABLE IF NOT EXISTS `students` (
 --
 
 INSERT INTO `students` (`id`, `name`, `cpf`, `email`, `phone`, `birthday`, `login`, `password`, `registerDate`, `statusStudent`, `beginningCourse`, `endCourse`, `idCourse`) VALUES
-(2, 'Allan do Amaral', '09607461452', 'allan@gmail.com', '30917005', '1994-02-02', 'allan', 'allan', '2013-08-31 17:55:11', 'ATIVO', '2011-03-14', '2015-12-31', 1),
-(3, 'Marcela Domingues', '329032732', 'marcela@hotmail.com', '97398', '2013-12-01', 'marcela', 'marcela', '2013-09-01 00:06:43', 'ATIVO', '2013-09-01', '2016-09-01', 2);
+(1,'CHEVROLET DA SILVA FORD','575.691.669-57','abrilia@gmail.com','8162294416','2005-12-30','chevrolet','chevrolet','0000-00-00 00:00:00','ATIVO','2005-12-30','2010-12-30',4),
+(2,'CINCERO DO NASCIMENTO','443.966.990-50','acheropita@gmail.com','8135830113','2005-12-31','cincero','cincero','0000-00-00 00:00:01','ATIVO','2005-12-31','2010-12-31',19),
+(3,'CINCONEGUE WASHINGTON MATOS','601.552.168-64','josecasou@gmail.com','8121169013','2005-12-25','cinconeg','cinconeg','0000-00-00 00:00:02','ATIVO','2005-12-25','2010-12-25',20),
+(4,'CLARISBADEU BRAZ DA SILVA','451.138.746-04','jose@gmail.com','8163538995','1954-11-29','clari','clari','0000-00-00 00:00:03','ATIVO','1994-11-29','1998-11-29',1),
+(5,'COLAPSO CARDÍACO DA SILVA','865.263.744-09','josemachuca@gmail.com','8154211051','2005-03-09','colapso','colapso','0000-00-00 00:00:04','ATIVO','2005-03-09','2010-03-09',2),
+(6,'COMIGO É NOVE NA GARRUCHA TROUXADA','599.186.952-93','zemaria@gmail.com','8133204304','2005-12-30','comigo','comigo','0000-00-00 00:00:05','ATIVO','2005-12-30','2010-12-30',20),
+(7,'CONFESSOURA DORNELLES','141.245.445-02','padre@gmail.com','8149594961','2005-12-31','confessoura','confessoura','0000-00-00 00:00:06','ATIVO','2005-12-31','2010-12-31',10),
+(8,'CRISOPRASSO COMPASSO','354.725.879-05','pinto@gmail.com','8131112685','2005-12-25','crisoprasso','crisoprasso','0000-00-00 00:00:07','ATIVO','2005-12-25','2010-12-25',3),
+(9,'DANÚBIO TARADA DUARTE','573.427.784-35','xixi@gmail.com','8115564267','1954-11-29','danubio','danubio','0000-00-00 00:00:08','ATIVO','1998-11-29','2002-11-29',19),
+(10,'DARCÍLIA ABRAÇOS','513.614.536-64','jovelina@gmail.com','8133432108','2005-03-09','abracos','abracos','0000-00-00 00:00:09','ATIVO','2005-03-09','2010-03-09',20),
+(11,'CARVALHO SANTINHO','336.467.786-79','jotaca@gmail.com','8112180110','2005-12-30','carvalho','carvalho','0000-00-00 00:00:10','INATIVO','2005-12-30','2010-12-30',6),
+(12,'DEUS MAGDA SILVA','165.414.164-00','julio@gmail.com','8126878445','2005-12-31','deus','deus','0000-00-00 00:00:11','INATIVO','2005-12-31','2010-12-31',16),
+(13,'DEUS É INFINITAMENTE MISERICORDIOSO','877.064.195-17','justica@gmail.com','8154320101','2005-12-25','infinito','infinito','0000-00-00 00:00:12','ATIVO','2005-12-25','2010-12-25',9),
+(14,'DEUSARINA VENUS DE MILO','210.654.363-86','lancaperfume@gmail.com','8175588948','1954-11-29','deusarina','deusarina','0000-00-00 00:00:13','INATIVO','1954-11-29','1958-11-29',5),
+(15,'DEZÊNCIO FEVERÊNCIO DE OITENTA E CINCO','975.171.176-29','leao@gmail.com','8120577897','2005-03-09','dezencio','dezencio','0000-00-00 00:00:14','INATIVO','2005-03-09','2010-03-09',18),
+(16,'DIGNATARIO DA ORDEM IMPERIAL DO CRUZEIRO','784.086.812-65','ledaprazeres@gmail.com','8129273420','2005-12-30','dignatario','dignatario','0000-00-00 00:00:15','ATIVO','2005-12-30','2010-12-30',16),
+(17,'DILKE DE LA ROQUE PINHO','762.261.434-36','letsgo@gmail.com','8142969527','2005-12-31','dilke','dilke','0000-00-00 00:00:16','ATIVO','2005-12-31','2010-12-31',11),
+(18,'DISNEY CHAPLIN MILHOMEM DE SOUZA','821.235.262-58','liberdade@gmail.com','8119881409','2005-12-25','chaplin','chaplin','0000-00-00 00:00:17','ATIVO','2005-12-25','2010-12-25',15),
+(19,'DOLORES FUERTES DE BARRIGA','914.411.460-59','frat@gmail.com','8154662080','1954-11-29','dolores','dolores','0000-00-00 00:00:18','ATIVO','1999-11-29','2009-11-29',17),
+(20,'DOSOLINA PIROCA TAZINASSO','839.787.421-60','libertino@gmail.com','8183552165','2005-03-09','dosoli','dosoli','0000-00-00 00:00:19','ATIVO','2005-03-09','2010-03-09',8);
+
 
 -- --------------------------------------------------------
 
