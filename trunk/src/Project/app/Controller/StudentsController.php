@@ -18,6 +18,12 @@
                 $students = $this->Student->find('all', array('conditions'=> array('cpf' => $cpf)));
                 $this -> set('students', $students);
             }
+            /*if (array_key_exists('cpf', $_POST)) {
+                // Pega o cpf que foi digitado e coloca na variável $cpf
+                $cpf =  $_POST['cpf'];
+                $this -> $this -> Student -> query ( "SELECT * FROM students WHERE cpf LIKE ('%" . $cpf . "%')" );
+                $this -> set ('students', $students);
+            } */
         }else {
             $students = $this->Student->find('all');
             $this -> set ('students', $students);

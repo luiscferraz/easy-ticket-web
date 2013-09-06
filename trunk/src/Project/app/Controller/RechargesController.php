@@ -24,6 +24,13 @@
             if($this->request->is('post')){
                 if ($this -> verifica($this->request->data)) {
                     if($this->Recharge->saveAll($this->request->data)){
+                        $idcartao = $this->request->data['Recharge']['idTicketRecharge'];
+                        $valor = $this->request->data['Recharge']['rechargeValue'];
+                        $this->Ticket->updateAll(
+                            array(
+                              'Ticket.balance' => 'Ticket.balance' + $valor
+                            ), 
+                            array('Ticket.id' => $idcartao));
                         $this->Session->setFlash('A recarga foi efetuada!.');
                         $this->redirect(array('action' => 'index'));
 
