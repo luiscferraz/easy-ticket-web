@@ -12,7 +12,7 @@
     <body>
 
 		<div class="conteudo">
-			<img id="miniLogo" src="/img/miniLogo.png" />
+			<a href= /../ ><img id="miniLogo" src="/img/miniLogo.png" border="0"></a>
 			<h1><?php echo $title_for_layout; ?></h1>	        
 			<?php echo $this->fetch('content'); ?>
 	    </div>
