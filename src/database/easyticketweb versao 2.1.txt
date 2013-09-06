@@ -162,6 +162,20 @@ CREATE TABLE IF NOT EXISTS `menu_has_item` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `type` enum('cons','admin','fin_manager','cons_manager','rel_manager') NOT NULL,
+  PRIMARY KEY (`id`,`username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+
+
+
+--
 -- Estrutura para tabela `payments`
 --
 
@@ -190,10 +204,10 @@ CREATE TABLE IF NOT EXISTS `payments` (
 CREATE TABLE IF NOT EXISTS `recharges` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rechargeValue` int(11) NOT NULL,
-  `rechargeDate` datetime NOT NULL,
-  `numTicket` int(11) NOT NULL,
+  `rechargeDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `idTicketRecharge` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `numTicket_idx` (`numTicket`)
+  INDEX `idTicketRecharge_idx` (`idTicketRecharge`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -307,11 +321,12 @@ ALTER TABLE `menu_has_item`
 ALTER TABLE `payments`
   ADD CONSTRAINT `idTicket` FOREIGN KEY (`idTicket`) REFERENCES `tickets` (`id`),
   ADD CONSTRAINT `idMeal` FOREIGN KEY (`idMeal`) REFERENCES `meals` (`id`);
---
+
 -- Restrições para tabelas `recharges`
 --
 ALTER TABLE `recharges`
-  ADD CONSTRAINT `numTicket` FOREIGN KEY (`numTicket`) REFERENCES `tickets` (`id`);
+  ADD CONSTRAINT `idTicketRecharge` FOREIGN KEY (`idTicketRecharge`) REFERENCES `tickets` (`id`);
+--
 
 --
 -- Restrições para tabelas `students`

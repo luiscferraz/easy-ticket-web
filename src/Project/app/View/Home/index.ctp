@@ -9,6 +9,8 @@
 			<li><?php echo $this->Html->link('Cartões', array('action' =>'../tickets'));?></li>
 			<li><?php echo $this->Html->link('Refeições', array('action' =>'../meals'));?></li>
 			<li><?php echo $this->Html->link('Itens', array('action' =>'../items'));?></li>
+			<li><?php echo $this->Html->link('Cardápios', array('action' =>'../menus'));?></li>
+			<li><?php echo $this->Html->link('Recargas', array('action' =>'../recharges'));?></li>
 
 		</ul>
 </div>
