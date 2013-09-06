@@ -75,7 +75,7 @@ legend{
 	margin-top: 30px;
 }
 
-#dados1, #dados2{
+#dados1, #dados2, #dados3{
 	font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
 	padding-left: 20px;
 	border-width: 30px;
@@ -89,6 +89,12 @@ legend{
 	margin-top: 12px;
 	margin-bottom: 50px;
 	padding-bottom: 10px !important;
+}
+
+#dados3{
+	margin-top: 0px;
+	margin-bottom: 50px;
+	padding-bottom: 0px;
 }
 
 
@@ -122,8 +128,8 @@ legend{
 }
 
 .submit input {
-	width: 45%;
- 	 padding: 30px 8px;
+	width: 19%;
+ 	 padding: 15px 8px;
   	 font:normal 14px/1.1em Verdana;
 	 margin-top: -40%;
 	 margin-right: 38%;
@@ -152,7 +158,8 @@ legend{
   	position:fixed;
     height: 50%;
     border:2px solid #30ba0c;
-    padding-bottom: 60px;
+    margin-top:-10px;
+    padding-bottom: 150px;
 	/*end*/
 }
 #Menu_Home ul  {
@@ -178,4 +185,10 @@ legend{
 }
 #Menu_Home ul li a:hover {
 	background-color:#008B00;
+}
+
+#btnAddRecharge{
+	margin-top: 50px;
+	margin-left: 450px;
+
 }
