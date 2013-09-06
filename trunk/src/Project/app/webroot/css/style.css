@@ -149,29 +149,47 @@ legend{
 ==== MENU PRINCIPAL ======
 ==========================
 ==========================*/
-#Menu_Home{
+#Menu_Home {
+	height: 35%;
+}
+
+#Menu_Home, #Menu_Home2 {
     background-color: #30ba0c;
     width:400px;
 	opacity:0.85;
 	/*alterado*/
 	padding:10px 0px 10px 0px;
   	position:fixed;
-    height: 50%;
     border:2px solid #30ba0c;
     margin-top:-10px;
     padding-bottom: 150px;
 	/*end*/
 }
+
 #Menu_Home ul  {
 	margin-top:10px;
 	margin-left:0px;
 	padding-left:0px;
 }
+
+#Menu_Home2 ul  {
+	margin-top:10px;
+	margin-left:0px;
+	padding-left:0px;
+}
+
 #Menu_Home ul li{
 	list-style:none;
 	color:#FFF;
 	opacity:1;
 }
+
+#Menu_Home2 ul li{
+	list-style:none;
+	color:#FFF;
+	opacity:1;
+}
+
 #Menu_Home ul li a{
 	text-decoration:none;
 	opacity:1 !important;
@@ -181,11 +199,32 @@ legend{
 	margin-top:10px;
 	font-size:20px;
 	color:#FFF;
-	
 }
+
+#Menu_Home2 ul li a{
+	text-decoration:none;
+	opacity:1 !important;
+	color:#000;
+	display:block;
+	padding:10px 0px 10px 50px;
+	margin-top:10px;
+	font-size:20px;
+	color:#FFF;
+}
+
 #Menu_Home ul li a:hover {
 	background-color:#008B00;
 }
+
+#Menu_Home2 ul li a:hover {
+	background-color:#008B00;
+}
+
+#Menu_Home2 {
+	margin-left: 40%;
+	height: 10%;
+}
+
 
 #btnAddRecharge{
 	margin-top: 50px;

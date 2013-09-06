@@ -21,7 +21,7 @@
 
 		<div class="left">
 				
-			<fieldset id="dados2">
+			<fieldset id="dados1">
 				<legend class="legenda">Selecionar itens</legend>	
 
 				<?php echo $this->Form->input('Recharge.idTicketRecharge', array('options' => $list_items,'empty' => $empty,'type'=>'select','label' => 'Selecione o item 1: ', 'class'=>'itemList'));  ?> <br>	
@@ -36,7 +36,7 @@
 							
 			</fieldset>
 
-			<fieldset id="dados3">
+			<fieldset id="dados2">
 					<?php echo $this->Form->input('Student.birthday', array('label' => 'Data do cardápio: ','required'=>'required', 'id'=>'dataCardapio'));?> <br>
 
 			</fieldset>
